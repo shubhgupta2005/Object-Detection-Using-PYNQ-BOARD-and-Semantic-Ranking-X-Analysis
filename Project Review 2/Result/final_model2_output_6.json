@@ -1,0 +1,334 @@
+{
+  "input_image_path": "C:\\Users\\jaisw\\Downloads\\14141641837_b528fd2d55_z-500x500.jpg",
+  "image_path": "C:\\Users\\jaisw\\Downloads\\14141641837_b528fd2d55_z-500x500.jpg",
+  "task": "something is to be taken away from tea cup",
+  "detections": [
+    {
+      "class_name": "orange",
+      "confidence": 0.6516,
+      "bbox": [
+        330.64,
+        165.32,
+        500.0,
+        318.82
+      ]
+    },
+    {
+      "class_name": "orange",
+      "confidence": 0.5034,
+      "bbox": [
+        208.22,
+        256.58,
+        391.88,
+        407.85
+      ]
+    }
+  ],
+  "model2": {
+    "task": "something is to be taken away from tea cup",
+    "classified_task": "get lemon out of tea",
+    "task_index": 5,
+    "task_class_similarity": 0.8903723955154419,
+    "selected_object": {
+      "class_name": "orange",
+      "confidence": 0.6516,
+      "bbox": [
+        330.64,
+        165.32,
+        500.0,
+        318.82
+      ],
+      "score": 0.6966986790299415,
+      "base_score": 0.7250078320503235,
+      "cos_sim": 0.7564683556556702,
+      "image_cos_sim": 0.28824907541275024
+    },
+    "ranked_objects": [
+      {
+        "class_name": "orange",
+        "confidence": 0.6516,
+        "bbox": [
+          330.64,
+          165.32,
+          500.0,
+          318.82
+        ],
+        "score": 0.6966986790299415,
+        "base_score": 0.7250078320503235,
+        "cos_sim": 0.7564683556556702,
+        "image_cos_sim": 0.28824907541275024
+      },
+      {
+        "class_name": "orange",
+        "confidence": 0.5034,
+        "bbox": [
+          208.22,
+          256.58,
+          391.88,
+          407.85
+        ],
+        "score": 0.667592179775238,
+        "base_score": 0.680547833442688,
+        "cos_sim": 0.7564683556556702,
+        "image_cos_sim": 0.2870633602142334
+      }
+    ],
+    "reasoning_trace": {
+      "task": "something is to be taken away from tea cup",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 2,
+            "valid_count": 2,
+            "detections": [
+              {
+                "class_name": "orange",
+                "confidence": 0.6516,
+                "bbox": [
+                  330.64,
+                  165.32,
+                  500.0,
+                  318.82
+                ]
+              },
+              {
+                "class_name": "orange",
+                "confidence": 0.5034,
+                "bbox": [
+                  208.22,
+                  256.58,
+                  391.88,
+                  407.85
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "something is to be taken away from tea cup",
+            "classified_task": "get lemon out of tea",
+            "task_index": 5,
+            "task_class_similarity": 0.8903723955154419
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "orange",
+              "orange"
+            ],
+            "confidence_values": [
+              0.6516,
+              0.5034
+            ],
+            "count": 2
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.7250078320503235,
+              0.680547833442688
+            ],
+            "label_cosine_similarity": [
+              0.7564683556556702,
+              0.7564683556556702
+            ],
+            "crop_cosine_similarity": [
+              0.28824907541275024,
+              0.2870633602142334
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "orange",
+                "confidence": 0.6516,
+                "bbox": [
+                  330.64,
+                  165.32,
+                  500.0,
+                  318.82
+                ],
+                "score": 0.6966986790299415,
+                "base_score": 0.7250078320503235,
+                "cos_sim": 0.7564683556556702,
+                "image_cos_sim": 0.28824907541275024
+              },
+              {
+                "class_name": "orange",
+                "confidence": 0.5034,
+                "bbox": [
+                  208.22,
+                  256.58,
+                  391.88,
+                  407.85
+                ],
+                "score": 0.667592179775238,
+                "base_score": 0.680547833442688,
+                "cos_sim": 0.7564683556556702,
+                "image_cos_sim": 0.2870633602142334
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "orange",
+              "confidence": 0.6516,
+              "bbox": [
+                330.64,
+                165.32,
+                500.0,
+                318.82
+              ],
+              "score": 0.6966986790299415,
+              "base_score": 0.7250078320503235,
+              "cos_sim": 0.7564683556556702,
+              "image_cos_sim": 0.28824907541275024
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "something is to be taken away from tea cup",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 2,
+          "valid_count": 2,
+          "detections": [
+            {
+              "class_name": "orange",
+              "confidence": 0.6516,
+              "bbox": [
+                330.64,
+                165.32,
+                500.0,
+                318.82
+              ]
+            },
+            {
+              "class_name": "orange",
+              "confidence": 0.5034,
+              "bbox": [
+                208.22,
+                256.58,
+                391.88,
+                407.85
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "something is to be taken away from tea cup",
+          "classified_task": "get lemon out of tea",
+          "task_index": 5,
+          "task_class_similarity": 0.8903723955154419
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "orange",
+            "orange"
+          ],
+          "confidence_values": [
+            0.6516,
+            0.5034
+          ],
+          "count": 2
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.7250078320503235,
+            0.680547833442688
+          ],
+          "label_cosine_similarity": [
+            0.7564683556556702,
+            0.7564683556556702
+          ],
+          "crop_cosine_similarity": [
+            0.28824907541275024,
+            0.2870633602142334
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "orange",
+              "confidence": 0.6516,
+              "bbox": [
+                330.64,
+                165.32,
+                500.0,
+                318.82
+              ],
+              "score": 0.6966986790299415,
+              "base_score": 0.7250078320503235,
+              "cos_sim": 0.7564683556556702,
+              "image_cos_sim": 0.28824907541275024
+            },
+            {
+              "class_name": "orange",
+              "confidence": 0.5034,
+              "bbox": [
+                208.22,
+                256.58,
+                391.88,
+                407.85
+              ],
+              "score": 0.667592179775238,
+              "base_score": 0.680547833442688,
+              "cos_sim": 0.7564683556556702,
+              "image_cos_sim": 0.2870633602142334
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "orange",
+            "confidence": 0.6516,
+            "bbox": [
+              330.64,
+              165.32,
+              500.0,
+              318.82
+            ],
+            "score": 0.6966986790299415,
+            "base_score": 0.7250078320503235,
+            "cos_sim": 0.7564683556556702,
+            "image_cos_sim": 0.28824907541275024
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "C:\\Users\\jaisw\\OneDrive\\Desktop\\DVCon26\\YOLO_custom\\results\\final_model2_output.jpg"
+}
