@@ -1,0 +1,524 @@
+{
+  "detections": [
+    {
+      "class_name": "bird",
+      "confidence": 0.0569,
+      "bbox": [
+        419.09,
+        88.37,
+        454.33,
+        126.57
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.049,
+      "bbox": [
+        278.62,
+        105.28,
+        324.89,
+        153.38
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0366,
+      "bbox": [
+        41.47,
+        14.55,
+        151.25,
+        89.06
+      ]
+    },
+    {
+      "class_name": "dining table",
+      "confidence": 0.0176,
+      "bbox": [
+        0.0,
+        15.48,
+        458.43,
+        300.0
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0163,
+      "bbox": [
+        166.23,
+        222.06,
+        338.2,
+        299.39
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0115,
+      "bbox": [
+        20.92,
+        0.0,
+        109.1,
+        83.02
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0108,
+      "bbox": [
+        108.17,
+        21.48,
+        153.82,
+        52.64
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.0107,
+      "bbox": [
+        0.0,
+        0.0,
+        212.55,
+        245.91
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0093,
+      "bbox": [
+        178.74,
+        0.0,
+        471.33,
+        245.03
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.0093,
+      "bbox": [
+        0.0,
+        0.0,
+        450.12,
+        267.56
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.0084,
+      "bbox": [
+        0.86,
+        179.4,
+        183.73,
+        300.0
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0083,
+      "bbox": [
+        79.94,
+        19.28,
+        115.48,
+        57.55
+      ]
+    },
+    {
+      "class_name": "potted plant",
+      "confidence": 0.0079,
+      "bbox": [
+        323.47,
+        29.24,
+        469.64,
+        300.0
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0072,
+      "bbox": [
+        17.7,
+        220.57,
+        176.16,
+        300.0
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.0069,
+      "bbox": [
+        396.66,
+        84.96,
+        431.93,
+        123.71
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0067,
+      "bbox": [
+        352.07,
+        98.15,
+        451.02,
+        245.19
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0065,
+      "bbox": [
+        324.96,
+        107.09,
+        408.91,
+        237.05
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0064,
+      "bbox": [
+        71.49,
+        23.63,
+        123.5,
+        89.89
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0059,
+      "bbox": [
+        5.35,
+        41.45,
+        116.05,
+        206.73
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.0049,
+      "bbox": [
+        0.0,
+        62.09,
+        120.38,
+        230.45
+      ]
+    },
+    {
+      "class_name": "potted plant",
+      "confidence": 0.0045,
+      "bbox": [
+        358.17,
+        84.25,
+        452.03,
+        218.54
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0039,
+      "bbox": [
+        44.55,
+        17.39,
+        79.79,
+        57.38
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0031,
+      "bbox": [
+        78.46,
+        8.9,
+        179.05,
+        70.02
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0029,
+      "bbox": [
+        100.42,
+        27.6,
+        161.56,
+        80.38
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0027,
+      "bbox": [
+        348.41,
+        176.9,
+        470.11,
+        300.0
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0027,
+      "bbox": [
+        51.01,
+        256.89,
+        219.68,
+        300.0
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0027,
+      "bbox": [
+        43.65,
+        27.31,
+        92.09,
+        82.59
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0026,
+      "bbox": [
+        293.78,
+        36.57,
+        435.6,
+        169.11
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0023,
+      "bbox": [
+        157.89,
+        106.83,
+        410.06,
+        300.0
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0022,
+      "bbox": [
+        125.24,
+        11.56,
+        455.12,
+        291.45
+      ]
+    },
+    {
+      "class_name": "car",
+      "confidence": 0.0022,
+      "bbox": [
+        0.0,
+        0.0,
+        247.6,
+        82.96
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0021,
+      "bbox": [
+        111.18,
+        227.75,
+        233.38,
+        300.0
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.0021,
+      "bbox": [
+        256.76,
+        27.13,
+        471.18,
+        300.0
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0021,
+      "bbox": [
+        343.1,
+        134.7,
+        384.32,
+        217.26
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0019,
+      "bbox": [
+        0.0,
+        27.63,
+        46.31,
+        222.61
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.0016,
+      "bbox": [
+        0.0,
+        152.27,
+        54.51,
+        282.87
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0016,
+      "bbox": [
+        72.89,
+        276.99,
+        116.26,
+        297.67
+      ]
+    },
+    {
+      "class_name": "car",
+      "confidence": 0.0016,
+      "bbox": [
+        0.0,
+        0.0,
+        25.77,
+        25.78
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.0016,
+      "bbox": [
+        0.0,
+        29.5,
+        354.58,
+        176.93
+      ]
+    },
+    {
+      "class_name": "car",
+      "confidence": 0.0016,
+      "bbox": [
+        0.0,
+        0.0,
+        412.51,
+        182.61
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.0015,
+      "bbox": [
+        163.94,
+        126.98,
+        339.77,
+        221.3
+      ]
+    },
+    {
+      "class_name": "car",
+      "confidence": 0.0014,
+      "bbox": [
+        1.95,
+        6.46,
+        21.94,
+        61.73
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0013,
+      "bbox": [
+        2.38,
+        87.77,
+        18.07,
+        163.77
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0013,
+      "bbox": [
+        75.41,
+        107.67,
+        116.64,
+        148.29
+      ]
+    },
+    {
+      "class_name": "car",
+      "confidence": 0.0012,
+      "bbox": [
+        30.77,
+        4.14,
+        77.09,
+        20.87
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0012,
+      "bbox": [
+        388.93,
+        106.36,
+        481.39,
+        282.71
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.0011,
+      "bbox": [
+        29.31,
+        33.07,
+        151.39,
+        174.5
+      ]
+    },
+    {
+      "class_name": "dining table",
+      "confidence": 0.0011,
+      "bbox": [
+        127.97,
+        73.07,
+        385.18,
+        300.0
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0011,
+      "bbox": [
+        340.43,
+        120.26,
+        379.2,
+        184.5
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.0011,
+      "bbox": [
+        373.83,
+        143.87,
+        421.74,
+        204.03
+      ]
+    },
+    {
+      "class_name": "chair",
+      "confidence": 0.001,
+      "bbox": [
+        110.95,
+        254.78,
+        151.68,
+        285.08
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.001,
+      "bbox": [
+        302.45,
+        114.12,
+        335.01,
+        174.17
+      ]
+    }
+  ]
+}

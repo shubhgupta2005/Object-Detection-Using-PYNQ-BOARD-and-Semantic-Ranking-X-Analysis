@@ -1,0 +1,1007 @@
+{
+  "input_image_path": "D:\\Capstone project\\sample\\sample\\000000000090.jpg",
+  "image_path": "D:\\Capstone project\\sample\\sample\\000000000090.jpg",
+  "task": "a cow",
+  "detections": [
+    {
+      "class_name": "horse",
+      "confidence": 0.98,
+      "bbox": [
+        362.08,
+        161.22,
+        383.4,
+        250.77
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9672,
+      "bbox": [
+        312.17,
+        163.41,
+        335.95,
+        247.51
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9517,
+      "bbox": [
+        364.28,
+        202.26,
+        382.47,
+        274.22
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9418,
+      "bbox": [
+        304.27,
+        127.51,
+        343.17,
+        223.54
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9352,
+      "bbox": [
+        354.76,
+        125.25,
+        389.09,
+        226.63
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9349,
+      "bbox": [
+        314.53,
+        203.79,
+        334.79,
+        271.82
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9283,
+      "bbox": [
+        406.73,
+        169.01,
+        433.83,
+        248.17
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9272,
+      "bbox": [
+        410.12,
+        207.15,
+        432.48,
+        273.77
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.9197,
+      "bbox": [
+        0.0,
+        37.47,
+        640.0,
+        429.0
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9172,
+      "bbox": [
+        255.76,
+        172.13,
+        292.67,
+        242.3
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9111,
+      "bbox": [
+        362.49,
+        243.0,
+        383.16,
+        302.15
+      ]
+    },
+    {
+      "class_name": "sheep",
+      "confidence": 0.9053,
+      "bbox": [
+        0.0,
+        0.0,
+        640.0,
+        429.0
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9043,
+      "bbox": [
+        259.33,
+        209.26,
+        289.23,
+        269.35
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.9025,
+      "bbox": [
+        217.22,
+        229.42,
+        453.62,
+        319.33
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.9011,
+      "bbox": [
+        312.67,
+        243.9,
+        335.47,
+        299.9
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.8984,
+      "bbox": [
+        319.09,
+        172.46,
+        430.27,
+        296.94
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8966,
+      "bbox": [
+        243.73,
+        197.47,
+        526.09,
+        283.42
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8955,
+      "bbox": [
+        198.23,
+        258.89,
+        464.82,
+        362.09
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8942,
+      "bbox": [
+        409.13,
+        247.23,
+        433.41,
+        301.72
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.8935,
+      "bbox": [
+        299.86,
+        208.97,
+        449.34,
+        327.33
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8908,
+      "bbox": [
+        195.91,
+        156.66,
+        572.83,
+        255.62
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.8883,
+      "bbox": [
+        266.97,
+        181.17,
+        389.75,
+        287.54
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8876,
+      "bbox": [
+        247.36,
+        140.07,
+        301.67,
+        214.93
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8856,
+      "bbox": [
+        399.14,
+        136.72,
+        440.84,
+        220.82
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8846,
+      "bbox": [
+        139.56,
+        184.86,
+        434.06,
+        292.13
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8818,
+      "bbox": [
+        259.09,
+        247.35,
+        288.98,
+        298.79
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8798,
+      "bbox": [
+        452.13,
+        214.9,
+        485.43,
+        271.77
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.877,
+      "bbox": [
+        367.22,
+        164.03,
+        472.03,
+        310.7
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8755,
+      "bbox": [
+        0.0,
+        0.0,
+        167.27,
+        124.3
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8751,
+      "bbox": [
+        0.0,
+        48.84,
+        167.42,
+        190.37
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8749,
+      "bbox": [
+        205.4,
+        0.0,
+        416.02,
+        124.14
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8745,
+      "bbox": [
+        107.53,
+        0.0,
+        317.6,
+        124.14
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8745,
+      "bbox": [
+        107.81,
+        109.98,
+        640.0,
+        237.67
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8741,
+      "bbox": [
+        305.26,
+        0.0,
+        513.55,
+        123.33
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.874,
+      "bbox": [
+        162.57,
+        285.58,
+        488.59,
+        406.94
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8739,
+      "bbox": [
+        0.0,
+        115.25,
+        167.43,
+        255.75
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8735,
+      "bbox": [
+        454.11,
+        0.0,
+        640.0,
+        122.45
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8733,
+      "bbox": [
+        356.94,
+        16.62,
+        561.38,
+        156.48
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8728,
+      "bbox": [
+        455.11,
+        50.67,
+        640.0,
+        188.26
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.8718,
+      "bbox": [
+        276.72,
+        242.72,
+        468.69,
+        364.42
+      ]
+    },
+    {
+      "class_name": "dog",
+      "confidence": 0.8716,
+      "bbox": [
+        275.88,
+        145.79,
+        375.58,
+        259.67
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.871,
+      "bbox": [
+        57.7,
+        49.32,
+        269.53,
+        189.57
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.871,
+      "bbox": [
+        357.33,
+        283.4,
+        386.28,
+        333.07
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8702,
+      "bbox": [
+        90.42,
+        144.61,
+        481.57,
+        265.22
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8696,
+      "bbox": [
+        307.78,
+        283.17,
+        338.06,
+        331.77
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8695,
+      "bbox": [
+        65.65,
+        240.94,
+        396.51,
+        375.83
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8687,
+      "bbox": [
+        411.31,
+        82.18,
+        606.99,
+        221.49
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8679,
+      "bbox": [
+        0.0,
+        175.15,
+        111.63,
+        326.2
+      ]
+    },
+    {
+      "class_name": "dog",
+      "confidence": 0.8678,
+      "bbox": [
+        320.63,
+        98.07,
+        417.95,
+        252.25
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8676,
+      "bbox": [
+        446.77,
+        179.97,
+        489.46,
+        244.56
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8675,
+      "bbox": [
+        200.53,
+        216.05,
+        248.01,
+        268.72
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8672,
+      "bbox": [
+        461.89,
+        116.35,
+        640.0,
+        253.09
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.866,
+      "bbox": [
+        312.5,
+        48.01,
+        508.69,
+        189.24
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8657,
+      "bbox": [
+        0.0,
+        342.46,
+        114.84,
+        429.0
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8653,
+      "bbox": [
+        202.9,
+        251.07,
+        244.77,
+        299.71
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8653,
+      "bbox": [
+        452.73,
+        253.93,
+        485.88,
+        299.59
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8651,
+      "bbox": [
+        0.0,
+        0.0,
+        640.0,
+        208.31
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.8634,
+      "bbox": [
+        211.21,
+        185.49,
+        344.25,
+        287.87
+      ]
+    },
+    {
+      "class_name": "dog",
+      "confidence": 0.8629,
+      "bbox": [
+        369.71,
+        125.39,
+        465.97,
+        288.78
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8628,
+      "bbox": [
+        0.0,
+        243.28,
+        111.45,
+        388.36
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.8628,
+      "bbox": [
+        194.95,
+        218.76,
+        360.22,
+        320.89
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8626,
+      "bbox": [
+        0.0,
+        0.0,
+        640.0,
+        171.72
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.8614,
+      "bbox": [
+        208.77,
+        0.0,
+        640.0,
+        328.13
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8611,
+      "bbox": [
+        255.85,
+        285.33,
+        290.71,
+        330.59
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8606,
+      "bbox": [
+        273.55,
+        216.66,
+        640.0,
+        338.31
+      ]
+    },
+    {
+      "class_name": "couch",
+      "confidence": 0.8599,
+      "bbox": [
+        0.0,
+        77.86,
+        640.0,
+        345.95
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8597,
+      "bbox": [
+        450.19,
+        344.69,
+        640.0,
+        429.0
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8594,
+      "bbox": [
+        161.6,
+        50.52,
+        364.96,
+        187.46
+      ]
+    },
+    {
+      "class_name": "dog",
+      "confidence": 0.8591,
+      "bbox": [
+        218.1,
+        151.4,
+        333.51,
+        259.85
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8587,
+      "bbox": [
+        196.02,
+        182.82,
+        253.04,
+        238.9
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8585,
+      "bbox": [
+        403.58,
+        287.2,
+        436.64,
+        332.67
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8579,
+      "bbox": [
+        351.76,
+        345.86,
+        565.1,
+        429.0
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8579,
+      "bbox": [
+        492.71,
+        220.42,
+        541.6,
+        272.49
+      ]
+    },
+    {
+      "class_name": "boat",
+      "confidence": 0.8567,
+      "bbox": [
+        175.52,
+        249.53,
+        375.07,
+        359.54
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8566,
+      "bbox": [
+        63.63,
+        344.35,
+        265.64,
+        429.0
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8564,
+      "bbox": [
+        292.76,
+        107.33,
+        354.42,
+        187.18
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.856,
+      "bbox": [
+        86.17,
+        0.0,
+        469.73,
+        290.87
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8557,
+      "bbox": [
+        257.43,
+        345.75,
+        464.71,
+        429.0
+      ]
+    },
+    {
+      "class_name": "dining table",
+      "confidence": 0.8553,
+      "bbox": [
+        399.13,
+        205.11,
+        533.69,
+        343.56
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.855,
+      "bbox": [
+        0.0,
+        0.0,
+        640.0,
+        199.47
+      ]
+    },
+    {
+      "class_name": "cow",
+      "confidence": 0.8548,
+      "bbox": [
+        346.88,
+        323.34,
+        393.17,
+        366.56
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8541,
+      "bbox": [
+        36.06,
+        271.5,
+        640.0,
+        429.0
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8537,
+      "bbox": [
+        505.93,
+        277.02,
+        640.0,
+        417.75
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.8533,
+      "bbox": [
+        0.0,
+        23.72,
+        261.98,
+        408.69
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8531,
+      "bbox": [
+        0.0,
+        54.0,
+        491.05,
+        305.15
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8531,
+      "bbox": [
+        343.94,
+        107.24,
+        400.86,
+        188.08
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8529,
+      "bbox": [
+        164.63,
+        344.32,
+        363.45,
+        429.0
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8527,
+      "bbox": [
+        496.31,
+        257.77,
+        538.31,
+        299.63
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.8522,
+      "bbox": [
+        0.0,
+        53.0,
+        543.4,
+        300.27
+      ]
+    },
+    {
+      "class_name": "potted plant",
+      "confidence": 0.8516,
+      "bbox": [
+        0.0,
+        123.42,
+        559.37,
+        296.49
+      ]
+    },
+    {
+      "class_name": "cow",
+      "confidence": 0.8515,
+      "bbox": [
+        392.64,
+        324.76,
+        443.17,
+        366.7
+      ]
+    },
+    {
+      "class_name": "cat",
+      "confidence": 0.8514,
+      "bbox": [
+        205.09,
+        278.18,
+        437.81,
+        401.67
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.8513,
+      "bbox": [
+        0.0,
+        63.2,
+        640.0,
+        222.96
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8513,
+      "bbox": [
+        202.17,
+        288.15,
+        244.4,
+        331.0
+      ]
+    },
+    {
+      "class_name": "dog",
+      "confidence": 0.8509,
+      "bbox": [
+        158.95,
+        150.66,
+        289.46,
+        271.67
+      ]
+    },
+    {
+      "class_name": "horse",
+      "confidence": 0.8508,
+      "bbox": [
+        540.15,
+        259.9,
+        590.77,
+        301.26
+      ]
+    },
+    {
+      "class_name": "bus",
+      "confidence": 0.8508,
+      "bbox": [
+        54.78,
+        0.0,
+        640.0,
+        140.8
+      ]
+    },
+    {
+      "class_name": "bus",
+      "confidence": 0.8506,
+      "bbox": [
+        157.93,
+        263.59,
+        640.0,
+        429.0
+      ]
+    },
+    {
+      "class_name": "cow",
+      "confidence": 0.8505,
+      "bbox": [
+        0.0,
+        70.46,
+        640.0,
+        218.18
+      ]
+    },
+    {
+      "class_name": "bird",
+      "confidence": 0.85,
+      "bbox": [
+        32.8,
+        182.6,
+        203.69,
+        317.12
+      ]
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+MODEL 1 + MODEL 2: COMPLETE TECHNICAL STRUCTURE, WORKING, AND SYNCHRONIZATION
+(Prepared as a ChatGPT-ready context file)
+Date: 2026-03-06
+Project root: YOLO_custom
+
+====================================================================
+0) PURPOSE OF THIS DOCUMENT
+====================================================================
+This file explains, in high detail:
+1) What Model 1 is, how it is built, and how it runs.
+2) What Model 2 is, how it is built, and how it runs.
+3) How Model 1 and Model 2 are interconnected.
+4) How synchronization works (software and RTL/AXI style).
+5) What is sequential vs what is truly simultaneous/pipelined.
+6) Data formats and contracts between stages.
+
+This document is written so ChatGPT (or any LLM) can quickly infer the exact
+pipeline behavior from implementation-level details.
+
+
+====================================================================
+1) HIGH-LEVEL PROJECT ARCHITECTURE
+====================================================================
+The repository contains two major conceptual tracks:
+
+A) Python AI inference/training/export track
+   - Detector model (Model 1)
+   - Task-aware ranker/selector model (Model 2)
+   - End-to-end runner scripts and JSON handoff
+
+B) Hardware/RTL validation track
+   - `tas_pipeline_top.v` (pipelined task-aware selector top)
+   - `tb_pipeline_cocotb.py` (AXI-stream cocotb tests)
+   - Golden vectors for regression checking
+
+Important practical note:
+- There are effectively two “Model 1” options in the codebase:
+  1) Custom detector in `pipeline.py` (`ObjectDetectionModel`).
+  2) Ultralytics/YOLO backend in `yolo_inference.py`.
+- There are effectively two “Model 2” options:
+  1) Local deterministic ranker (`TaskAwareRankerModel`) in `model2_task_ranker.py`.
+  2) External custom selector module loaded dynamically by
+     `run_model2_with_image_output.py` from another folder (`task_aware_selector.py`).
+
+
+====================================================================
+2) MODEL 1 (DETECTOR) — COMPLETE STRUCTURE
+====================================================================
+
+--------------------------------------------------------------------
+2.1 Model 1 Option A: Custom detector in `pipeline.py`
+--------------------------------------------------------------------
+Core class:
+- `ObjectDetectionModel`
+
+Sub-components:
+1) Backbone (`LightweightBackbone`)
+   - Input: image tensor `(B, 3, H, W)`
+   - Normalization using registered mean/std buffers.
+   - Stem conv + BN + ReLU6.
+   - Depthwise-separable blocks (`DWConvBlock`) for efficiency.
+   - Produces two feature maps:
+     - `feat_s8` (higher spatial resolution)
+     - `feat_s16` (lower spatial resolution)
+
+2) Detection heads (`DetectionHead`)
+   - One head for s8 features and one for s16 features.
+   - Per-anchor prediction vector:
+     `[x, y, w, h, objectness, class_logits...]`
+   - Output list of tensors:
+     - `det_s8`: `(B, N_s8, 85)`
+     - `det_s16`: `(B, N_s16, 85)`
+     - where 85 = 4 box + 1 objectness + 80 class values.
+
+3) Decoder (`decode_yolo_outputs`)
+   - Concatenates both scales.
+   - Applies sigmoid transforms and heuristic calibration offsets.
+   - Computes per-class score = objectness * class_prob.
+   - Filters by confidence threshold.
+   - Converts center-width-height boxes to `xyxy` pixel boxes.
+   - Applies class-wise NMS via `_nms_classwise` and `_box_iou_xyxy`.
+   - Returns final per-image detections as list of dicts.
+
+Why FPGA-friendly:
+- Depthwise separable conv reduces MAC/parameter count.
+- ReLU6 is quantization friendly.
+- Design anticipates INT8 flow and deployment constraints.
+
+
+--------------------------------------------------------------------
+2.2 Model 1 Option B: Tiny YOLOv2 backend in `yolo_inference.py`
+--------------------------------------------------------------------
+Core behavior:
+- `load_yolo_model()` instantiates `TinyYOLOv2` PyTorch network and loads local `tiny_yolo_v2.pt`.
+- `run_inference()` executes single-image detection and decodes 13x13 grid anchor predictions into standardized bounding boxes.
+- `filter_detections()` removes low-confidence / malformed / invalid boxes.
+- `save_detections()` stores JSON payload: `{"detections": [...]}`.
+- `main()` is full path: load -> infer -> filter -> save.
+
+Output detection schema used by downstream model2:
+- Each detection item contains:
+  - `class_name` (string)
+  - `confidence` (float)
+  - `bbox` ([x1, y1, x2, y2])
+
+
+--------------------------------------------------------------------
+2.3 Model 1 Operational outputs and artifacts
+--------------------------------------------------------------------
+Primary outputs:
+- Runtime detection list in memory.
+- JSON files in `results/`, e.g. `detections.json`.
+
+Auxiliary workflows from project scripts:
+- Training: `train.py` -> `results/detector_model.pt`.
+- Simulation profiling: `pipeline_sim.py` -> `results/golden_vectors.json`.
+- Export: `export.py` -> ONNX, headers, metadata.
+
+
+====================================================================
+3) MODEL 2 (TASK-AWARE SELECTION) — COMPLETE STRUCTURE
+====================================================================
+
+--------------------------------------------------------------------
+3.1 Model 2 Option A: Deterministic ranker in `model2_task_ranker.py`
+--------------------------------------------------------------------
+Core class:
+- `TaskAwareRankerModel` (inherits `nn.Module`)
+
+Key concepts:
+1) Task-to-class weighting (`_task_class_weights`)
+   - Parses task text (lowercased).
+   - For seat/comfort-related tasks, gives class bonuses, e.g. couch/chair/bench.
+   - Unknown task => empty bonus map.
+
+2) Geometric prior (`_bbox_area`)
+   - Computes object area from `xyxy` box.
+   - Normalized area contributes a small bonus (0.10 * normalized_area).
+
+3) Final score composition (`rank_detections`)
+   - For each detection:
+     `score = confidence + class_bonus + area_bonus`
+   - Sort descending and pick top candidate.
+
+4) `forward(...)` interface
+   - Accepts flexible arguments for compatibility with broader pipeline:
+     - `input_image` (optional)
+     - `task`
+     - `detections`
+     - `class_ids`, `confidences`, `boxes_xyxy` (optional)
+   - Returns dictionary with:
+     - `selected_index`
+     - `selected_object`
+     - `ranked_candidates`
+
+This implementation is deterministic and lightweight (no heavy compute).
+
+
+--------------------------------------------------------------------
+3.2 Model 2 Option B: External custom selector path
+--------------------------------------------------------------------
+Used in:
+- `run_model2_with_image_output.py`
+
+Behavior:
+1) Loads external module dynamically from `--custom-model-dir`:
+   - expects `task_aware_selector.py`.
+2) Filters detections through external helper.
+3) Loads CLIP-style text/image embedding stack via external module.
+4) Computes task classification and object scoring.
+5) Computes additional image-crop similarity for each bbox.
+6) Fuses scores (base score + crop similarity weighted fusion).
+7) Sorts candidates, chooses best object.
+8) Writes final JSON and draws final selected bbox on output image.
+
+This option is image-aware in Model 2 (uses image crops), unlike purely label/confidence ranking.
+
+
+--------------------------------------------------------------------
+3.3 Model 2 standalone runner
+--------------------------------------------------------------------
+`run_model2.py`:
+- Reads input JSON with fields like `task` and `detections`.
+- Runs `TaskAwareRankerModel`.
+- Writes output JSON (`results/model2_output.json` by default).
+
+Useful for testing only Model 2 independently from detector runtime.
+
+
+====================================================================
+4) MODEL 1 ↔ MODEL 2 INTERCONNECTION (SOFTWARE PATH)
+====================================================================
+
+--------------------------------------------------------------------
+4.1 Bridge class: `TaskAwareObjectIdentifier` in `example_detector_usage.py`
+--------------------------------------------------------------------
+This class explicitly wires both models:
+1) Prepares image through detector preprocessor.
+2) Runs detector model forward pass.
+3) Decodes detector outputs into candidate objects.
+4) Optional extra postprocessing NMS.
+5) Converts candidate metadata into tensors:
+   - `class_ids`
+   - `confidences`
+   - `boxes_xyxy`
+6) Calls Model 2 `forward(...)` with:
+   - original `input_image`
+   - `task`
+   - full detections list
+   - tensorized metadata
+7) Uses `selected_index` returned by Model 2.
+8) Returns full pipeline result with selected object + candidate list.
+
+Fallback logic:
+- If Model 2 index is invalid, bridge falls back to max-confidence detection.
+
+
+--------------------------------------------------------------------
+4.2 CLI orchestration path
+--------------------------------------------------------------------
+`basic_cli.py` is the user-facing runner:
+- Gets `--image` and `--task` from args or prompt.
+- Invokes `run_model2_with_image_output.main(...)`.
+
+`run_model2_with_image_output.py` does:
+1) Model 1 detection through `yolo_inference.main(...)`.
+2) Saves/updates detections JSON with `image_path` and `task` metadata.
+3) Executes Model 2 (external custom selector mode).
+4) Draws selected bbox onto output image.
+5) Writes combined final output JSON.
+
+So, in this path, interconnection is file+memory mediated in one script process.
+
+
+====================================================================
+5) SYNCHRONIZATION AND “SIMULTANEOUS” WORKING
+====================================================================
+
+--------------------------------------------------------------------
+5.1 Software synchronization semantics
+--------------------------------------------------------------------
+For a single request (single image + task), model execution is logically sequential:
+
+Step A: Model 1 produces detections.
+Step B: Model 2 consumes detections (+task, optional image features).
+
+Therefore, for one sample:
+- Not truly parallel between Model 1 and Model 2 due to hard dependency.
+- Model 2 cannot start until candidate detections exist.
+
+However, at system level, pipelining across multiple requests is possible conceptually:
+- While sample n is in Model 2, sample n+1 can be in Model 1 (if orchestrated).
+- Current scripts do not implement an explicit async queue scheduler, but architecture allows it.
+
+
+--------------------------------------------------------------------
+5.2 RTL-style synchronization (`tas_pipeline_top.v` + cocotb)
+--------------------------------------------------------------------
+`tas_pipeline_top.v` models a staged pipeline with valid propagation:
+- AXI-S input receives pixel stream (`s_axis_*`).
+- Sideband metadata (`task_id`, `class_ids_flat`, `conf_q_flat`) must be stable per frame.
+- Internal stages compute feature accumulations, embedding dot products, confidence fusion, argmax.
+- `valid_pipe` shifts frame validity through 9 stages.
+- Output appears on `m_axis_tdata` with `m_axis_tvalid`.
+- Consumer backpressure handled via `m_axis_tready` semantics at egress.
+
+This is true hardware pipelining behavior:
+- Different stages can work on different frame data in overlapping clock cycles.
+- Throughput and II behavior tested in cocotb throughput test.
+
+
+--------------------------------------------------------------------
+5.3 Cocotb test synchronization checks (`tb_pipeline_cocotb.py`)
+--------------------------------------------------------------------
+The testbench verifies three key sync properties:
+1) Golden comparison test
+   - Streams frames and compares output best index vs golden reference.
+2) Backpressure behavior test
+   - Holds `m_axis_tready=0` and checks stalling behavior.
+3) Throughput test
+   - Sends consecutive frames and estimates inter-frame output intervals.
+
+Important consistency note from testbench:
+- It warns and skips golden compare if golden vectors are detector-only format and
+  do not contain task-aware keys (`task_id`, `class_ids`, `confidences`, `best_idx`).
+- This indicates two parallel historical/functional data formats in project artifacts.
+
+
+====================================================================
+6) DATA CONTRACTS BETWEEN MODEL 1 AND MODEL 2
+====================================================================
+
+--------------------------------------------------------------------
+6.1 Detection object schema (common handoff)
+--------------------------------------------------------------------
+Typical fields consumed by model2/bridge:
+- `class_name`: string
+- `class_id`: int (if available)
+- `confidence`: float
+- bbox coordinates:
+  - detector bridge format often has `x1,y1,x2,y2` and also `x,y,w,h`
+  - YOLO inference JSON uses `bbox=[x1,y1,x2,y2]`
+
+Model 2 adapters normalize these into what they need.
+
+
+--------------------------------------------------------------------
+6.2 Model 2 input forms
+--------------------------------------------------------------------
+In `TaskAwareObjectIdentifier._run_second_model`:
+- Passes both rich list-of-dicts and compact tensors.
+- This supports multiple second-model API styles.
+
+Accepted model2 return forms:
+- dict with `selected_index`
+- tensor (argmax used if multi-value)
+- int
+
+This is an interface compatibility layer to reduce integration friction.
+
+
+====================================================================
+7) END-TO-END EXECUTION FLOWS
+====================================================================
+
+Flow 1 (Custom detector + local ranker, fully in-repo):
+1) Build `ObjectDetector` around `ObjectDetectionModel`.
+2) Decode detections with `decode_yolo_outputs`.
+3) Bridge to `TaskAwareRankerModel`.
+4) Return selected object.
+
+Flow 2 (YOLO backend + external custom selector, CLI default style):
+1) `basic_cli.py` collects image/task.
+2) `run_model2_with_image_output.py` calls `yolo_inference.main`.
+3) Detections written to JSON.
+4) External model2 module loaded dynamically.
+5) Model2 scores candidates (optionally image-crop aware).
+6) Final selected object persisted in final JSON and rendered image.
+
+Flow 3 (RTL simulation track):
+1) cocotb streams AXI pixels + metadata.
+2) RTL computes fused scoring and argmax in pipelined stages.
+3) AXI output is checked against expected behavior and timing constraints.
+
+
+====================================================================
+8) WHAT “WORKING SIMULTANEOUSLY” MEANS HERE (PRECISE INTERPRETATION)
+====================================================================
+
+For one image/task transaction:
+- Functional dependency is serial: Model 1 then Model 2.
+
+For hardware pipeline internals:
+- Multiple compute stages run concurrently every cycle after fill, which is true simultaneous staged operation.
+
+For multi-sample software deployment:
+- Potential concurrent execution exists via queue/pipeline orchestration (not fully implemented in provided scripts).
+
+So the project is best described as:
+- Serial inter-model dependency at algorithm level,
+- Parallel/pipelined stage-level concurrency in RTL,
+- Potential batch-level concurrency in a production scheduler.
+
+
+====================================================================
+9) PRACTICAL FILE MAP (KEY IMPLEMENTATION FILES)
+====================================================================
+
+Model 1 (custom detector):
+- `pipeline.py`
+- `pipeline_sim.py` (simulation/profiling/golden generation)
+
+Model 1 (YOLO backend):
+- `yolo_inference.py`
+
+Model 2 (local ranker):
+- `model2_task_ranker.py`
+- `run_model2.py`
+
+Bridge and end-to-end app runners:
+- `example_detector_usage.py`
+- `run_model2_with_image_output.py`
+- `basic_cli.py`
+
+Hardware-style sync path:
+- `tas_pipeline_top.v`
+- `tb_pipeline_cocotb.py`
+
+Outputs/artifacts:
+- `results/detections.json`
+- `results/model2_output.json`
+- `results/final_model2_output.json`
+- `results/golden_vectors.json`
+
+
+====================================================================
+10) CHATGPT-READY SUMMARY BLOCK
+====================================================================
+
+If an LLM needs a compact machine-readable summary, use this block:
+
+{
+  "model1": {
+    "variants": [
+      "Custom lightweight detector (pipeline.py)",
+      "Ultralytics/YOLO backend wrapper (yolo_inference.py)"
+    ],
+    "output_contract": "List of detections with class, confidence, bbox"
+  },
+  "model2": {
+    "variants": [
+      "TaskAwareRankerModel heuristic score fusion",
+      "External CLIP-based selector loaded dynamically"
+    ],
+    "input_contract": "task text + detector candidates (+ optional image/tensors)",
+    "output_contract": "selected_index + selected_object + ranked_candidates"
+  },
+  "interconnection": {
+    "bridge": "TaskAwareObjectIdentifier and run_model2_with_image_output",
+    "dependency": "Model2 depends on Model1 candidate detections"
+  },
+  "synchronization": {
+    "software": "Sequential per sample, pipeline-able across samples",
+    "rtl": "Multi-stage pipelined with AXI valid/ready semantics"
+  },
+  "key_truth": "Algorithm-level M1->M2 is serial; hardware stage-level execution is concurrent after pipeline fill."
+}
+
+
+====================================================================
+11) CURRENT LIMITATIONS / INTEGRATION NOTES
+====================================================================
+
+1) Dual-path complexity:
+   - Repository contains multiple model1/model2 implementations and formats.
+   - Integrators should choose one canonical runtime path and enforce one schema.
+
+2) Golden vector format mismatch risk:
+   - Detector-only vectors may not include task-aware keys expected by cocotb tests.
+
+3) External model2 dependency:
+   - `run_model2_with_image_output.py` depends on an external directory module.
+   - Reproducibility requires that external module/version be pinned.
+
+4) True simultaneous M1/M2 in software:
+   - Not implemented as asynchronous producer-consumer by default scripts.
+   - Can be added using queues/workers for throughput optimization.
+
+
+END OF DOCUMENT
