@@ -1,0 +1,416 @@
+{
+  "input_image_path": "C:\\Users\\jaisw\\OneDrive\\Desktop\\DVCon26_des\\archive (11)\\coco2017\\test2017\\000000050891.jpg",
+  "image_path": "C:\\Users\\jaisw\\OneDrive\\Desktop\\DVCon26_des\\archive (11)\\coco2017\\test2017\\000000050891.jpg",
+  "task": "object that is use to control fire",
+  "detections": [
+    {
+      "class_name": "car",
+      "confidence": 0.8924,
+      "bbox": [
+        1.82,
+        267.62,
+        176.04,
+        354.21
+      ]
+    },
+    {
+      "class_name": "fire hydrant",
+      "confidence": 0.8796,
+      "bbox": [
+        237.81,
+        139.12,
+        442.6,
+        605.65
+      ]
+    },
+    {
+      "class_name": "car",
+      "confidence": 0.4297,
+      "bbox": [
+        178.54,
+        286.8,
+        250.27,
+        335.87
+      ]
+    }
+  ],
+  "model2": {
+    "task": "object that is use to control fire",
+    "classified_task": "extinguish fire",
+    "task_index": 12,
+    "task_class_similarity": 0.869062066078186,
+    "selected_object": {
+      "class_name": "fire hydrant",
+      "confidence": 0.8796,
+      "bbox": [
+        237.81,
+        139.12,
+        442.6,
+        605.65
+      ],
+      "score": 0.7639775622636079,
+      "base_score": 0.8398803472518921,
+      "cos_sim": 0.8228576183319092,
+      "image_cos_sim": 0.24603049457073212
+    },
+    "ranked_objects": [
+      {
+        "class_name": "fire hydrant",
+        "confidence": 0.8796,
+        "bbox": [
+          237.81,
+          139.12,
+          442.6,
+          605.65
+        ],
+        "score": 0.7639775622636079,
+        "base_score": 0.8398803472518921,
+        "cos_sim": 0.8228576183319092,
+        "image_cos_sim": 0.24603049457073212
+      },
+      {
+        "class_name": "car",
+        "confidence": 0.8924,
+        "bbox": [
+          1.82,
+          267.62,
+          176.04,
+          354.21
+        ],
+        "score": 0.7586786575615406,
+        "base_score": 0.8431843519210815,
+        "cos_sim": 0.8220919370651245,
+        "image_cos_sim": 0.20347902178764343
+      },
+      {
+        "class_name": "car",
+        "confidence": 0.4297,
+        "bbox": [
+          178.54,
+          286.8,
+          250.27,
+          335.87
+        ],
+        "score": 0.6684722166508437,
+        "base_score": 0.704374372959137,
+        "cos_sim": 0.8220919370651245,
+        "image_cos_sim": 0.20359356701374054
+      }
+    ],
+    "reasoning_trace": {
+      "task": "object that is use to control fire",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 3,
+            "valid_count": 3,
+            "detections": [
+              {
+                "class_name": "car",
+                "confidence": 0.8924,
+                "bbox": [
+                  1.82,
+                  267.62,
+                  176.04,
+                  354.21
+                ]
+              },
+              {
+                "class_name": "fire hydrant",
+                "confidence": 0.8796,
+                "bbox": [
+                  237.81,
+                  139.12,
+                  442.6,
+                  605.65
+                ]
+              },
+              {
+                "class_name": "car",
+                "confidence": 0.4297,
+                "bbox": [
+                  178.54,
+                  286.8,
+                  250.27,
+                  335.87
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "object that is use to control fire",
+            "classified_task": "extinguish fire",
+            "task_index": 12,
+            "task_class_similarity": 0.869062066078186
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "car",
+              "fire hydrant",
+              "car"
+            ],
+            "confidence_values": [
+              0.8924,
+              0.8796,
+              0.4297
+            ],
+            "count": 3
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.8431843519210815,
+              0.8398803472518921,
+              0.704374372959137
+            ],
+            "label_cosine_similarity": [
+              0.8220919370651245,
+              0.8228576183319092,
+              0.8220919370651245
+            ],
+            "crop_cosine_similarity": [
+              0.20347902178764343,
+              0.24603049457073212,
+              0.20359356701374054
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "fire hydrant",
+                "confidence": 0.8796,
+                "bbox": [
+                  237.81,
+                  139.12,
+                  442.6,
+                  605.65
+                ],
+                "score": 0.7639775622636079,
+                "base_score": 0.8398803472518921,
+                "cos_sim": 0.8228576183319092,
+                "image_cos_sim": 0.24603049457073212
+              },
+              {
+                "class_name": "car",
+                "confidence": 0.8924,
+                "bbox": [
+                  1.82,
+                  267.62,
+                  176.04,
+                  354.21
+                ],
+                "score": 0.7586786575615406,
+                "base_score": 0.8431843519210815,
+                "cos_sim": 0.8220919370651245,
+                "image_cos_sim": 0.20347902178764343
+              },
+              {
+                "class_name": "car",
+                "confidence": 0.4297,
+                "bbox": [
+                  178.54,
+                  286.8,
+                  250.27,
+                  335.87
+                ],
+                "score": 0.6684722166508437,
+                "base_score": 0.704374372959137,
+                "cos_sim": 0.8220919370651245,
+                "image_cos_sim": 0.20359356701374054
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "fire hydrant",
+              "confidence": 0.8796,
+              "bbox": [
+                237.81,
+                139.12,
+                442.6,
+                605.65
+              ],
+              "score": 0.7639775622636079,
+              "base_score": 0.8398803472518921,
+              "cos_sim": 0.8228576183319092,
+              "image_cos_sim": 0.24603049457073212
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "object that is use to control fire",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 3,
+          "valid_count": 3,
+          "detections": [
+            {
+              "class_name": "car",
+              "confidence": 0.8924,
+              "bbox": [
+                1.82,
+                267.62,
+                176.04,
+                354.21
+              ]
+            },
+            {
+              "class_name": "fire hydrant",
+              "confidence": 0.8796,
+              "bbox": [
+                237.81,
+                139.12,
+                442.6,
+                605.65
+              ]
+            },
+            {
+              "class_name": "car",
+              "confidence": 0.4297,
+              "bbox": [
+                178.54,
+                286.8,
+                250.27,
+                335.87
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "object that is use to control fire",
+          "classified_task": "extinguish fire",
+          "task_index": 12,
+          "task_class_similarity": 0.869062066078186
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "car",
+            "fire hydrant",
+            "car"
+          ],
+          "confidence_values": [
+            0.8924,
+            0.8796,
+            0.4297
+          ],
+          "count": 3
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.8431843519210815,
+            0.8398803472518921,
+            0.704374372959137
+          ],
+          "label_cosine_similarity": [
+            0.8220919370651245,
+            0.8228576183319092,
+            0.8220919370651245
+          ],
+          "crop_cosine_similarity": [
+            0.20347902178764343,
+            0.24603049457073212,
+            0.20359356701374054
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "fire hydrant",
+              "confidence": 0.8796,
+              "bbox": [
+                237.81,
+                139.12,
+                442.6,
+                605.65
+              ],
+              "score": 0.7639775622636079,
+              "base_score": 0.8398803472518921,
+              "cos_sim": 0.8228576183319092,
+              "image_cos_sim": 0.24603049457073212
+            },
+            {
+              "class_name": "car",
+              "confidence": 0.8924,
+              "bbox": [
+                1.82,
+                267.62,
+                176.04,
+                354.21
+              ],
+              "score": 0.7586786575615406,
+              "base_score": 0.8431843519210815,
+              "cos_sim": 0.8220919370651245,
+              "image_cos_sim": 0.20347902178764343
+            },
+            {
+              "class_name": "car",
+              "confidence": 0.4297,
+              "bbox": [
+                178.54,
+                286.8,
+                250.27,
+                335.87
+              ],
+              "score": 0.6684722166508437,
+              "base_score": 0.704374372959137,
+              "cos_sim": 0.8220919370651245,
+              "image_cos_sim": 0.20359356701374054
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "fire hydrant",
+            "confidence": 0.8796,
+            "bbox": [
+              237.81,
+              139.12,
+              442.6,
+              605.65
+            ],
+            "score": 0.7639775622636079,
+            "base_score": 0.8398803472518921,
+            "cos_sim": 0.8228576183319092,
+            "image_cos_sim": 0.24603049457073212
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "YOLO_custom/results/final_model2_output.jpg"
+}

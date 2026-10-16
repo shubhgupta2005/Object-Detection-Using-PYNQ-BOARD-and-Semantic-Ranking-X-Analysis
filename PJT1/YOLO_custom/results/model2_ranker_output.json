@@ -1,0 +1,101 @@
+{
+  "task": "serve wine",
+  "num_candidates": 7,
+  "selected_index": 2,
+  "selected_object": {
+    "class_name": "dining table",
+    "confidence": 0.7971,
+    "bbox": [
+      1.15,
+      39.59,
+      500.0,
+      332.45
+    ]
+  },
+  "ranked_candidates": [
+    {
+      "index": 2,
+      "class_name": "dining table",
+      "confidence": 0.7971,
+      "bbox": [
+        1.15,
+        39.59,
+        500.0,
+        332.45
+      ],
+      "score": 0.8971
+    },
+    {
+      "index": 0,
+      "class_name": "wine glass",
+      "confidence": 0.8794,
+      "bbox": [
+        245.95,
+        51.24,
+        317.19,
+        150.4
+      ],
+      "score": 0.884235
+    },
+    {
+      "index": 1,
+      "class_name": "bottle",
+      "confidence": 0.8141,
+      "bbox": [
+        76.03,
+        16.69,
+        143.61,
+        163.57
+      ],
+      "score": 0.820894
+    },
+    {
+      "index": 3,
+      "class_name": "pizza",
+      "confidence": 0.746,
+      "bbox": [
+        165.94,
+        150.9,
+        339.28,
+        320.89
+      ],
+      "score": 0.766169
+    },
+    {
+      "index": 4,
+      "class_name": "bottle",
+      "confidence": 0.4086,
+      "bbox": [
+        184.95,
+        67.52,
+        211.81,
+        122.98
+      ],
+      "score": 0.40962
+    },
+    {
+      "index": 5,
+      "class_name": "person",
+      "confidence": 0.4031,
+      "bbox": [
+        77.99,
+        0.28,
+        224.91,
+        51.73
+      ],
+      "score": 0.408274
+    },
+    {
+      "index": 6,
+      "class_name": "bottle",
+      "confidence": 0.3364,
+      "bbox": [
+        125.49,
+        39.85,
+        161.4,
+        143.56
+      ],
+      "score": 0.338949
+    }
+  ]
+}

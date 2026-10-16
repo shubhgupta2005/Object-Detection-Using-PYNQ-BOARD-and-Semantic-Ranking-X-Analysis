@@ -1,0 +1,49 @@
+{
+  "input_image_path": "results\\camera_capture.jpg",
+  "image_path": "results\\camera_capture.jpg",
+  "task": "headphone",
+  "detector": "world",
+  "vocabulary": [
+    "headphone",
+    "headphones",
+    "earphones",
+    "cell phone",
+    "person",
+    "medicine",
+    "camera",
+    "book",
+    "pen"
+  ],
+  "detections": [
+    {
+      "class_name": "person",
+      "confidence": 0.8756,
+      "bbox": [
+        336.35,
+        134.99,
+        1021.53,
+        720.0
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.547,
+      "bbox": [
+        987.19,
+        55.37,
+        1279.92,
+        720.0
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.0604,
+      "bbox": [
+        988.33,
+        538.1,
+        1277.84,
+        720.0
+      ]
+    }
+  ]
+}

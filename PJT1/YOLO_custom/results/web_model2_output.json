@@ -1,0 +1,254 @@
+{
+  "input_image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\web_warmup.jpg",
+  "image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\web_warmup.jpg",
+  "task": "something to drink from",
+  "detector": "classroom",
+  "vocabulary": null,
+  "detections": [
+    {
+      "class_name": "calculator",
+      "confidence": 0.2492,
+      "bbox": [
+        1.06,
+        0.0,
+        628.99,
+        480.0
+      ]
+    }
+  ],
+  "model2": {
+    "task": "something to drink from",
+    "classified_task": "serve wine",
+    "task_index": 9,
+    "task_class_similarity": 0.9027063846588135,
+    "selected_object": {
+      "class_name": "calculator",
+      "confidence": 0.2492,
+      "bbox": [
+        1.06,
+        0.0,
+        628.99,
+        480.0
+      ],
+      "score": 0.84984,
+      "base_score": 0.6574228405952454,
+      "cos_sim": 0.8323754668235779,
+      "image_cos_sim": 0.2150021344423294
+    },
+    "ranked_objects": [
+      {
+        "class_name": "calculator",
+        "confidence": 0.2492,
+        "bbox": [
+          1.06,
+          0.0,
+          628.99,
+          480.0
+        ],
+        "score": 0.84984,
+        "base_score": 0.6574228405952454,
+        "cos_sim": 0.8323754668235779,
+        "image_cos_sim": 0.2150021344423294
+      }
+    ],
+    "reasoning_trace": {
+      "task": "something to drink from",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 1,
+            "valid_count": 1,
+            "detections": [
+              {
+                "class_name": "calculator",
+                "confidence": 0.2492,
+                "bbox": [
+                  1.06,
+                  0.0,
+                  628.99,
+                  480.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "something to drink from",
+            "classified_task": "serve wine",
+            "task_index": 9,
+            "task_class_similarity": 0.9027063846588135
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "calculator"
+            ],
+            "confidence_values": [
+              0.2492
+            ],
+            "count": 1
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.6574228405952454
+            ],
+            "label_cosine_similarity": [
+              0.8323754668235779
+            ],
+            "crop_cosine_similarity": [
+              0.2150021344423294
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "calculator",
+                "confidence": 0.2492,
+                "bbox": [
+                  1.06,
+                  0.0,
+                  628.99,
+                  480.0
+                ],
+                "score": 0.84984,
+                "base_score": 0.6574228405952454,
+                "cos_sim": 0.8323754668235779,
+                "image_cos_sim": 0.2150021344423294
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "calculator",
+              "confidence": 0.2492,
+              "bbox": [
+                1.06,
+                0.0,
+                628.99,
+                480.0
+              ],
+              "score": 0.84984,
+              "base_score": 0.6574228405952454,
+              "cos_sim": 0.8323754668235779,
+              "image_cos_sim": 0.2150021344423294
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "something to drink from",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 1,
+          "valid_count": 1,
+          "detections": [
+            {
+              "class_name": "calculator",
+              "confidence": 0.2492,
+              "bbox": [
+                1.06,
+                0.0,
+                628.99,
+                480.0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "something to drink from",
+          "classified_task": "serve wine",
+          "task_index": 9,
+          "task_class_similarity": 0.9027063846588135
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "calculator"
+          ],
+          "confidence_values": [
+            0.2492
+          ],
+          "count": 1
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.6574228405952454
+          ],
+          "label_cosine_similarity": [
+            0.8323754668235779
+          ],
+          "crop_cosine_similarity": [
+            0.2150021344423294
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "calculator",
+              "confidence": 0.2492,
+              "bbox": [
+                1.06,
+                0.0,
+                628.99,
+                480.0
+              ],
+              "score": 0.84984,
+              "base_score": 0.6574228405952454,
+              "cos_sim": 0.8323754668235779,
+              "image_cos_sim": 0.2150021344423294
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "calculator",
+            "confidence": 0.2492,
+            "bbox": [
+              1.06,
+              0.0,
+              628.99,
+              480.0
+            ],
+            "score": 0.84984,
+            "base_score": 0.6574228405952454,
+            "cos_sim": 0.8323754668235779,
+            "image_cos_sim": 0.2150021344423294
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\web_model2_output.jpg"
+}

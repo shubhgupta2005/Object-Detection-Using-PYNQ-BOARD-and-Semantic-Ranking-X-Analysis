@@ -1,0 +1,509 @@
+{
+  "input_image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\camera_capture.jpg",
+  "image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\camera_capture.jpg",
+  "task": "towel",
+  "detector": "world",
+  "vocabulary": [
+    "towel",
+    "blanket",
+    "bag",
+    "book",
+    "paper",
+    "shirt",
+    "tie",
+    "person"
+  ],
+  "detections": [
+    {
+      "class_name": "person",
+      "confidence": 0.346,
+      "bbox": [
+        281.94,
+        36.13,
+        1230.89,
+        719.28
+      ]
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.2904,
+      "bbox": [
+        302.35,
+        462.03,
+        1047.27,
+        718.88
+      ]
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.1044,
+      "bbox": [
+        299.78,
+        79.97,
+        1056.9,
+        717.61
+      ]
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.0726,
+      "bbox": [
+        684.8,
+        52.9,
+        1066.25,
+        594.05
+      ]
+    }
+  ],
+  "model2": {
+    "task": "towel",
+    "classified_task": "step on something",
+    "task_index": 0,
+    "task_class_similarity": 0.7953758239746094,
+    "selected_object": {
+      "class_name": "shirt",
+      "confidence": 0.0726,
+      "bbox": [
+        684.8,
+        52.9,
+        1066.25,
+        594.05
+      ],
+      "score": 0.519586518485546,
+      "base_score": 0.5868911743164062,
+      "cos_sim": 0.8073017001152039,
+      "image_cos_sim": 0.30586040019989014
+    },
+    "ranked_objects": [
+      {
+        "class_name": "shirt",
+        "confidence": 0.0726,
+        "bbox": [
+          684.8,
+          52.9,
+          1066.25,
+          594.05
+        ],
+        "score": 0.519586518485546,
+        "base_score": 0.5868911743164062,
+        "cos_sim": 0.8073017001152039,
+        "image_cos_sim": 0.30586040019989014
+      },
+      {
+        "class_name": "shirt",
+        "confidence": 0.1044,
+        "bbox": [
+          299.78,
+          79.97,
+          1056.9,
+          717.61
+        ],
+        "score": 0.21352786317944528,
+        "base_score": 0.5964311361312866,
+        "cos_sim": 0.8073017001152039,
+        "image_cos_sim": 0.29246360063552856
+      },
+      {
+        "class_name": "shirt",
+        "confidence": 0.2904,
+        "bbox": [
+          302.35,
+          462.03,
+          1047.27,
+          718.88
+        ],
+        "score": 0.14061661374910733,
+        "base_score": 0.6522311568260193,
+        "cos_sim": 0.8073017001152039,
+        "image_cos_sim": 0.24265113472938538
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.346,
+        "bbox": [
+          281.94,
+          36.13,
+          1230.89,
+          719.28
+        ],
+        "score": 0.044474508390203116,
+        "base_score": 0.6488770842552185,
+        "cos_sim": 0.7786815762519836,
+        "image_cos_sim": 0.2725103497505188
+      }
+    ],
+    "reasoning_trace": {
+      "task": "towel",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 4,
+            "valid_count": 4,
+            "detections": [
+              {
+                "class_name": "person",
+                "confidence": 0.346,
+                "bbox": [
+                  281.94,
+                  36.13,
+                  1230.89,
+                  719.28
+                ]
+              },
+              {
+                "class_name": "shirt",
+                "confidence": 0.2904,
+                "bbox": [
+                  302.35,
+                  462.03,
+                  1047.27,
+                  718.88
+                ]
+              },
+              {
+                "class_name": "shirt",
+                "confidence": 0.1044,
+                "bbox": [
+                  299.78,
+                  79.97,
+                  1056.9,
+                  717.61
+                ]
+              },
+              {
+                "class_name": "shirt",
+                "confidence": 0.0726,
+                "bbox": [
+                  684.8,
+                  52.9,
+                  1066.25,
+                  594.05
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "towel",
+            "classified_task": "step on something",
+            "task_index": 0,
+            "task_class_similarity": 0.7953758239746094
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "person",
+              "shirt",
+              "shirt",
+              "shirt"
+            ],
+            "confidence_values": [
+              0.346,
+              0.2904,
+              0.1044,
+              0.0726
+            ],
+            "count": 4
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.6488770842552185,
+              0.6522311568260193,
+              0.5964311361312866,
+              0.5868911743164062
+            ],
+            "label_cosine_similarity": [
+              0.7786815762519836,
+              0.8073017001152039,
+              0.8073017001152039,
+              0.8073017001152039
+            ],
+            "crop_cosine_similarity": [
+              0.2725103497505188,
+              0.24265113472938538,
+              0.29246360063552856,
+              0.30586040019989014
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "shirt",
+                "confidence": 0.0726,
+                "bbox": [
+                  684.8,
+                  52.9,
+                  1066.25,
+                  594.05
+                ],
+                "score": 0.519586518485546,
+                "base_score": 0.5868911743164062,
+                "cos_sim": 0.8073017001152039,
+                "image_cos_sim": 0.30586040019989014
+              },
+              {
+                "class_name": "shirt",
+                "confidence": 0.1044,
+                "bbox": [
+                  299.78,
+                  79.97,
+                  1056.9,
+                  717.61
+                ],
+                "score": 0.21352786317944528,
+                "base_score": 0.5964311361312866,
+                "cos_sim": 0.8073017001152039,
+                "image_cos_sim": 0.29246360063552856
+              },
+              {
+                "class_name": "shirt",
+                "confidence": 0.2904,
+                "bbox": [
+                  302.35,
+                  462.03,
+                  1047.27,
+                  718.88
+                ],
+                "score": 0.14061661374910733,
+                "base_score": 0.6522311568260193,
+                "cos_sim": 0.8073017001152039,
+                "image_cos_sim": 0.24265113472938538
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.346,
+                "bbox": [
+                  281.94,
+                  36.13,
+                  1230.89,
+                  719.28
+                ],
+                "score": 0.044474508390203116,
+                "base_score": 0.6488770842552185,
+                "cos_sim": 0.7786815762519836,
+                "image_cos_sim": 0.2725103497505188
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "shirt",
+              "confidence": 0.0726,
+              "bbox": [
+                684.8,
+                52.9,
+                1066.25,
+                594.05
+              ],
+              "score": 0.519586518485546,
+              "base_score": 0.5868911743164062,
+              "cos_sim": 0.8073017001152039,
+              "image_cos_sim": 0.30586040019989014
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "towel",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 4,
+          "valid_count": 4,
+          "detections": [
+            {
+              "class_name": "person",
+              "confidence": 0.346,
+              "bbox": [
+                281.94,
+                36.13,
+                1230.89,
+                719.28
+              ]
+            },
+            {
+              "class_name": "shirt",
+              "confidence": 0.2904,
+              "bbox": [
+                302.35,
+                462.03,
+                1047.27,
+                718.88
+              ]
+            },
+            {
+              "class_name": "shirt",
+              "confidence": 0.1044,
+              "bbox": [
+                299.78,
+                79.97,
+                1056.9,
+                717.61
+              ]
+            },
+            {
+              "class_name": "shirt",
+              "confidence": 0.0726,
+              "bbox": [
+                684.8,
+                52.9,
+                1066.25,
+                594.05
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "towel",
+          "classified_task": "step on something",
+          "task_index": 0,
+          "task_class_similarity": 0.7953758239746094
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "person",
+            "shirt",
+            "shirt",
+            "shirt"
+          ],
+          "confidence_values": [
+            0.346,
+            0.2904,
+            0.1044,
+            0.0726
+          ],
+          "count": 4
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.6488770842552185,
+            0.6522311568260193,
+            0.5964311361312866,
+            0.5868911743164062
+          ],
+          "label_cosine_similarity": [
+            0.7786815762519836,
+            0.8073017001152039,
+            0.8073017001152039,
+            0.8073017001152039
+          ],
+          "crop_cosine_similarity": [
+            0.2725103497505188,
+            0.24265113472938538,
+            0.29246360063552856,
+            0.30586040019989014
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "shirt",
+              "confidence": 0.0726,
+              "bbox": [
+                684.8,
+                52.9,
+                1066.25,
+                594.05
+              ],
+              "score": 0.519586518485546,
+              "base_score": 0.5868911743164062,
+              "cos_sim": 0.8073017001152039,
+              "image_cos_sim": 0.30586040019989014
+            },
+            {
+              "class_name": "shirt",
+              "confidence": 0.1044,
+              "bbox": [
+                299.78,
+                79.97,
+                1056.9,
+                717.61
+              ],
+              "score": 0.21352786317944528,
+              "base_score": 0.5964311361312866,
+              "cos_sim": 0.8073017001152039,
+              "image_cos_sim": 0.29246360063552856
+            },
+            {
+              "class_name": "shirt",
+              "confidence": 0.2904,
+              "bbox": [
+                302.35,
+                462.03,
+                1047.27,
+                718.88
+              ],
+              "score": 0.14061661374910733,
+              "base_score": 0.6522311568260193,
+              "cos_sim": 0.8073017001152039,
+              "image_cos_sim": 0.24265113472938538
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.346,
+              "bbox": [
+                281.94,
+                36.13,
+                1230.89,
+                719.28
+              ],
+              "score": 0.044474508390203116,
+              "base_score": 0.6488770842552185,
+              "cos_sim": 0.7786815762519836,
+              "image_cos_sim": 0.2725103497505188
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "shirt",
+            "confidence": 0.0726,
+            "bbox": [
+              684.8,
+              52.9,
+              1066.25,
+              594.05
+            ],
+            "score": 0.519586518485546,
+            "base_score": 0.5868911743164062,
+            "cos_sim": 0.8073017001152039,
+            "image_cos_sim": 0.30586040019989014
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\final_model2_output.jpg"
+}

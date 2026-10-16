@@ -1,0 +1,14 @@
+{
+  "detections": [
+    {
+      "class_name": "train",
+      "confidence": 0.9279,
+      "bbox": [
+        201.1,
+        159.51,
+        441.71,
+        366.37
+      ]
+    }
+  ]
+}

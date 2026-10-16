@@ -1,0 +1,19 @@
+# Object Detection & Semantic Ranking Project Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core ML Framework (PyTorch)
+torch>=2.0.0,<=2.3.1; platform_system == "Windows"
+torch>=2.0.0; platform_system != "Windows"
+torchvision>=0.15.0,<=0.18.1; platform_system == "Windows"
+torchvision>=0.15.0; platform_system != "Windows"
+
+# Model 1: State-of-the-Art Detector
+ultralytics>=8.3.0
+
+# Model 2: Task-Aware Semantic Selector (CLIP backend)
+open-clip-torch>=2.20.0
+
+# Numeric & Computer Vision Utilities
+numpy>=1.24.0,<2.0.0
+pillow>=10.0.0
+opencv-python>=4.8.0

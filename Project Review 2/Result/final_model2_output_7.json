@@ -1,0 +1,252 @@
+{
+  "input_image_path": "C:\\Users\\jaisw\\Downloads\\v4-460px-Dig-a-Hole-Step-10-Version-4.jpg",
+  "image_path": "C:\\Users\\jaisw\\Downloads\\v4-460px-Dig-a-Hole-Step-10-Version-4.jpg",
+  "task": "someone digs hole",
+  "detections": [
+    {
+      "class_name": "person",
+      "confidence": 0.4517,
+      "bbox": [
+        0.97,
+        0.06,
+        151.69,
+        156.6
+      ]
+    }
+  ],
+  "model2": {
+    "task": "someone digs hole",
+    "classified_task": "dig hole",
+    "task_index": 6,
+    "task_class_similarity": 0.9383859634399414,
+    "selected_object": {
+      "class_name": "person",
+      "confidence": 0.4517,
+      "bbox": [
+        0.97,
+        0.06,
+        151.69,
+        156.6
+      ],
+      "score": 0.6815285574644805,
+      "base_score": 0.7157179117202759,
+      "cos_sim": 0.8288684487342834,
+      "image_cos_sim": 0.23606808483600616
+    },
+    "ranked_objects": [
+      {
+        "class_name": "person",
+        "confidence": 0.4517,
+        "bbox": [
+          0.97,
+          0.06,
+          151.69,
+          156.6
+        ],
+        "score": 0.6815285574644805,
+        "base_score": 0.7157179117202759,
+        "cos_sim": 0.8288684487342834,
+        "image_cos_sim": 0.23606808483600616
+      }
+    ],
+    "reasoning_trace": {
+      "task": "someone digs hole",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 1,
+            "valid_count": 1,
+            "detections": [
+              {
+                "class_name": "person",
+                "confidence": 0.4517,
+                "bbox": [
+                  0.97,
+                  0.06,
+                  151.69,
+                  156.6
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "someone digs hole",
+            "classified_task": "dig hole",
+            "task_index": 6,
+            "task_class_similarity": 0.9383859634399414
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "person"
+            ],
+            "confidence_values": [
+              0.4517
+            ],
+            "count": 1
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.7157179117202759
+            ],
+            "label_cosine_similarity": [
+              0.8288684487342834
+            ],
+            "crop_cosine_similarity": [
+              0.23606808483600616
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "person",
+                "confidence": 0.4517,
+                "bbox": [
+                  0.97,
+                  0.06,
+                  151.69,
+                  156.6
+                ],
+                "score": 0.6815285574644805,
+                "base_score": 0.7157179117202759,
+                "cos_sim": 0.8288684487342834,
+                "image_cos_sim": 0.23606808483600616
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "person",
+              "confidence": 0.4517,
+              "bbox": [
+                0.97,
+                0.06,
+                151.69,
+                156.6
+              ],
+              "score": 0.6815285574644805,
+              "base_score": 0.7157179117202759,
+              "cos_sim": 0.8288684487342834,
+              "image_cos_sim": 0.23606808483600616
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "someone digs hole",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 1,
+          "valid_count": 1,
+          "detections": [
+            {
+              "class_name": "person",
+              "confidence": 0.4517,
+              "bbox": [
+                0.97,
+                0.06,
+                151.69,
+                156.6
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "someone digs hole",
+          "classified_task": "dig hole",
+          "task_index": 6,
+          "task_class_similarity": 0.9383859634399414
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "person"
+          ],
+          "confidence_values": [
+            0.4517
+          ],
+          "count": 1
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.7157179117202759
+          ],
+          "label_cosine_similarity": [
+            0.8288684487342834
+          ],
+          "crop_cosine_similarity": [
+            0.23606808483600616
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "person",
+              "confidence": 0.4517,
+              "bbox": [
+                0.97,
+                0.06,
+                151.69,
+                156.6
+              ],
+              "score": 0.6815285574644805,
+              "base_score": 0.7157179117202759,
+              "cos_sim": 0.8288684487342834,
+              "image_cos_sim": 0.23606808483600616
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "person",
+            "confidence": 0.4517,
+            "bbox": [
+              0.97,
+              0.06,
+              151.69,
+              156.6
+            ],
+            "score": 0.6815285574644805,
+            "base_score": 0.7157179117202759,
+            "cos_sim": 0.8288684487342834,
+            "image_cos_sim": 0.23606808483600616
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "C:\\Users\\jaisw\\OneDrive\\Desktop\\DVCon26\\YOLO_custom\\results\\final_model2_output.jpg"
+}

@@ -1,0 +1,58 @@
+{
+  "input_image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\camera_capture.jpg",
+  "image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\camera_capture.jpg",
+  "task": "towel",
+  "detector": "world",
+  "vocabulary": [
+    "towel",
+    "blanket",
+    "bag",
+    "book",
+    "paper",
+    "shirt",
+    "tie",
+    "person"
+  ],
+  "detections": [
+    {
+      "class_name": "person",
+      "confidence": 0.346,
+      "bbox": [
+        281.94,
+        36.13,
+        1230.89,
+        719.28
+      ]
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.2904,
+      "bbox": [
+        302.35,
+        462.03,
+        1047.27,
+        718.88
+      ]
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.1044,
+      "bbox": [
+        299.78,
+        79.97,
+        1056.9,
+        717.61
+      ]
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.0726,
+      "bbox": [
+        684.8,
+        52.9,
+        1066.25,
+        594.05
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "vocab_scores": [
+    {
+      "name": "fan",
+      "use": "cool down when hot",
+      "sim": 0.1746
+    },
+    {
+      "name": "ceiling fan",
+      "use": "cool a room from the ceiling",
+      "sim": 0.0904
+    },
+    {
+      "name": "remote control",
+      "use": "control a fan, AC or TV",
+      "sim": 0.0868
+    },
+    {
+      "name": "air conditioner",
+      "use": "cool the room air",
+      "sim": 0.0813
+    },
+    {
+      "name": "microphone",
+      "use": "speak louder to an audience",
+      "sim": 0.0745
+    },
+    {
+      "name": "toy",
+      "use": "play with",
+      "sim": 0.0677
+    },
+    {
+      "name": "person",
+      "use": "a human being",
+      "sim": 0.0669
+    },
+    {
+      "name": "book",
+      "use": "read stories and learn",
+      "sim": 0.0667
+    }
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "task": "fan",
+  "detector": "world",
+  "vocabulary": [
+    "fan",
+    "ceiling fan",
+    "remote control",
+    "air conditioner",
+    "microphone",
+    "toy",
+    "book",
+    "plate",
+    "lamp"
+  ],
+  "classified_task": "step on something",
+  "selected": {
+    "class_name": "ceiling fan",
+    "confidence": 0.7232,
+    "bbox": [
+      712.66,
+      114.16,
+      897.91,
+      212.05
+    ],
+    "score": 0.5145391310782731,
+    "base_score": 0.7749475240707397,
+    "cos_sim": 0.7971250414848328,
+    "image_cos_sim": 0.23249872028827667
+  },
+  "ranked": [
+    {
+      "class_name": "ceiling fan",
+      "confidence": 0.7232,
+      "bbox": [
+        712.66,
+        114.16,
+        897.91,
+        212.05
+      ],
+      "detector_label": "ceiling fan",
+      "clip_label_prob": 0.6412,
+      "score": 0.5145391310782731,
+      "base_score": 0.7749475240707397,
+      "cos_sim": 0.7971250414848328,
+      "image_cos_sim": 0.23249872028827667
+    },
+    {
+      "class_name": "plate",
+      "confidence": 0.0572,
+      "bbox": [
+        616.84,
+        109.36,
+        875.67,
+        181.9
+      ],
+      "detector_label": "ceiling fan",
+      "clip_label_prob": 0.2865,
+      "score": 0.3734139256799221,
+      "base_score": 0.6038118600845337,
+      "cos_sim": 0.8380740880966187,
+      "image_cos_sim": 0.22135372459888458
+    },
+    {
+      "class_name": "ceiling fan",
+      "confidence": 0.0873,
+      "bbox": [
+        618.55,
+        110.55,
+        899.89,
+        210.18
+      ],
+      "detector_label": "fan",
+      "clip_label_prob": 0.363,
+      "score": 0.08558692843377591,
+      "base_score": 0.584177553653717,
+      "cos_sim": 0.7971251010894775,
+      "image_cos_sim": 0.2150799185037613
+    }
+  ],
+  "detections": [
+    {
+      "class_name": "ceiling fan",
+      "confidence": 0.7232,
+      "bbox": [
+        712.66,
+        114.16,
+        897.91,
+        212.05
+      ],
+      "detector_label": "ceiling fan",
+      "clip_label_prob": 0.6412
+    },
+    {
+      "class_name": "ceiling fan",
+      "confidence": 0.0873,
+      "bbox": [
+        618.55,
+        110.55,
+        899.89,
+        210.18
+      ],
+      "detector_label": "fan",
+      "clip_label_prob": 0.363
+    },
+    {
+      "class_name": "plate",
+      "confidence": 0.0572,
+      "bbox": [
+        616.84,
+        109.36,
+        875.67,
+        181.9
+      ],
+      "detector_label": "ceiling fan",
+      "clip_label_prob": 0.2865
+    }
+  ],
+  "status": "ok",
+  "elapsed_ms": 5734,
+  "id": "2026-10-16_14-52-10_762_fan",
+  "saved_at": "2026-10-16 14:52:10"
+}

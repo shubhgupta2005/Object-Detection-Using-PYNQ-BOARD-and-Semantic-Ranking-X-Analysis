@@ -1,0 +1,140 @@
+{
+  "vocab_scores": [
+    {
+      "name": "bottle",
+      "use": "hold and drink water or liquid",
+      "sim": 0.1693
+    },
+    {
+      "name": "water bottle",
+      "use": "carry and drink water",
+      "sim": 0.1486
+    },
+    {
+      "name": "water jug",
+      "use": "pour water into glasses",
+      "sim": 0.1029
+    },
+    {
+      "name": "pill bottle",
+      "use": "hold tablets and pills",
+      "sim": 0.093
+    },
+    {
+      "name": "wine glass",
+      "use": "serve and drink wine",
+      "sim": 0.0905
+    },
+    {
+      "name": "glass",
+      "use": "drink water or juice from",
+      "sim": 0.0875
+    },
+    {
+      "name": "medicine",
+      "use": "take when sick",
+      "sim": 0.0845
+    },
+    {
+      "name": "fire hydrant",
+      "use": "supply water to fight fires",
+      "sim": 0.0843
+    }
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "task": "Bottle",
+  "detector": "world",
+  "vocabulary": [
+    "bottle",
+    "water bottle",
+    "water jug",
+    "pill bottle",
+    "wine glass",
+    "glass",
+    "medicine",
+    "fire hydrant",
+    "hand sanitizer"
+  ],
+  "classified_task": "open bottle of beer",
+  "selected": {
+    "class_name": "water bottle",
+    "confidence": 0.179,
+    "bbox": [
+      888.69,
+      262.38,
+      1117.39,
+      720.0
+    ],
+    "score": 0.5482050050973892,
+    "base_score": 0.6892634034156799,
+    "cos_sim": 0.9079477190971375,
+    "image_cos_sim": 0.2779112756252289
+  },
+  "ranked": [
+    {
+      "class_name": "water bottle",
+      "confidence": 0.179,
+      "bbox": [
+        888.69,
+        262.38,
+        1117.39,
+        720.0
+      ],
+      "detector_label": "water jug",
+      "clip_label_prob": 0.7472,
+      "score": 0.5482050050973892,
+      "base_score": 0.6892634034156799,
+      "cos_sim": 0.9079477190971375,
+      "image_cos_sim": 0.2779112756252289
+    },
+    {
+      "class_name": "water bottle",
+      "confidence": 0.7445,
+      "bbox": [
+        889.56,
+        264.8,
+        1115.46,
+        720.0
+      ],
+      "detector_label": "bottle",
+      "clip_label_prob": 0.694,
+      "score": 0.4364949949026108,
+      "base_score": 0.8589133024215698,
+      "cos_sim": 0.9079475998878479,
+      "image_cos_sim": 0.2692292332649231
+    }
+  ],
+  "detections": [
+    {
+      "class_name": "water bottle",
+      "confidence": 0.7445,
+      "bbox": [
+        889.56,
+        264.8,
+        1115.46,
+        720.0
+      ],
+      "detector_label": "bottle",
+      "clip_label_prob": 0.694
+    },
+    {
+      "class_name": "water bottle",
+      "confidence": 0.179,
+      "bbox": [
+        888.69,
+        262.38,
+        1117.39,
+        720.0
+      ],
+      "detector_label": "water jug",
+      "clip_label_prob": 0.7472
+    }
+  ],
+  "status": "ok",
+  "elapsed_ms": 3076,
+  "id": "2026-10-16_14-53-10_101_bottle",
+  "saved_at": "2026-10-16 14:53:10"
+}

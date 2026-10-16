@@ -1,0 +1,428 @@
+{
+  "input_image_path": "results\\camera_capture.jpg",
+  "image_path": "results\\camera_capture.jpg",
+  "task": "headphone",
+  "detector": "world",
+  "vocabulary": [
+    "headphone",
+    "headphones",
+    "earphones",
+    "cell phone",
+    "person",
+    "medicine",
+    "camera",
+    "book",
+    "pen"
+  ],
+  "detections": [
+    {
+      "class_name": "person",
+      "confidence": 0.8756,
+      "bbox": [
+        336.35,
+        134.99,
+        1021.53,
+        720.0
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.547,
+      "bbox": [
+        987.19,
+        55.37,
+        1279.92,
+        720.0
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.0604,
+      "bbox": [
+        988.33,
+        538.1,
+        1277.84,
+        720.0
+      ]
+    }
+  ],
+  "model2": {
+    "task": "headphone",
+    "classified_task": "step on something",
+    "task_index": 0,
+    "task_class_similarity": 0.8280932307243347,
+    "selected_object": {
+      "class_name": "person",
+      "confidence": 0.8756,
+      "bbox": [
+        336.35,
+        134.99,
+        1021.53,
+        720.0
+      ],
+      "score": 0.3072405186569691,
+      "base_score": 0.8500075340270996,
+      "cos_sim": 0.8390393853187561,
+      "image_cos_sim": 0.22872717678546906
+    },
+    "ranked_objects": [
+      {
+        "class_name": "person",
+        "confidence": 0.8756,
+        "bbox": [
+          336.35,
+          134.99,
+          1021.53,
+          720.0
+        ],
+        "score": 0.3072405186569691,
+        "base_score": 0.8500075340270996,
+        "cos_sim": 0.8390393853187561,
+        "image_cos_sim": 0.22872717678546906
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.547,
+        "bbox": [
+          987.19,
+          55.37,
+          1279.92,
+          720.0
+        ],
+        "score": 0.153464843121171,
+        "base_score": 0.7514275312423706,
+        "cos_sim": 0.8390393257141113,
+        "image_cos_sim": 0.21735632419586182
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.0604,
+        "bbox": [
+          988.33,
+          538.1,
+          1277.84,
+          720.0
+        ],
+        "score": 0.08759463822185994,
+        "base_score": 0.60544753074646,
+        "cos_sim": 0.8390393853187561,
+        "image_cos_sim": 0.21376928687095642
+      }
+    ],
+    "reasoning_trace": {
+      "task": "headphone",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 3,
+            "valid_count": 3,
+            "detections": [
+              {
+                "class_name": "person",
+                "confidence": 0.8756,
+                "bbox": [
+                  336.35,
+                  134.99,
+                  1021.53,
+                  720.0
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.547,
+                "bbox": [
+                  987.19,
+                  55.37,
+                  1279.92,
+                  720.0
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.0604,
+                "bbox": [
+                  988.33,
+                  538.1,
+                  1277.84,
+                  720.0
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "headphone",
+            "classified_task": "step on something",
+            "task_index": 0,
+            "task_class_similarity": 0.8280932307243347
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "person",
+              "person",
+              "person"
+            ],
+            "confidence_values": [
+              0.8756,
+              0.547,
+              0.0604
+            ],
+            "count": 3
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.8500075340270996,
+              0.7514275312423706,
+              0.60544753074646
+            ],
+            "label_cosine_similarity": [
+              0.8390393853187561,
+              0.8390393257141113,
+              0.8390393853187561
+            ],
+            "crop_cosine_similarity": [
+              0.22872717678546906,
+              0.21735632419586182,
+              0.21376928687095642
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "person",
+                "confidence": 0.8756,
+                "bbox": [
+                  336.35,
+                  134.99,
+                  1021.53,
+                  720.0
+                ],
+                "score": 0.3072405186569691,
+                "base_score": 0.8500075340270996,
+                "cos_sim": 0.8390393853187561,
+                "image_cos_sim": 0.22872717678546906
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.547,
+                "bbox": [
+                  987.19,
+                  55.37,
+                  1279.92,
+                  720.0
+                ],
+                "score": 0.153464843121171,
+                "base_score": 0.7514275312423706,
+                "cos_sim": 0.8390393257141113,
+                "image_cos_sim": 0.21735632419586182
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.0604,
+                "bbox": [
+                  988.33,
+                  538.1,
+                  1277.84,
+                  720.0
+                ],
+                "score": 0.08759463822185994,
+                "base_score": 0.60544753074646,
+                "cos_sim": 0.8390393853187561,
+                "image_cos_sim": 0.21376928687095642
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "person",
+              "confidence": 0.8756,
+              "bbox": [
+                336.35,
+                134.99,
+                1021.53,
+                720.0
+              ],
+              "score": 0.3072405186569691,
+              "base_score": 0.8500075340270996,
+              "cos_sim": 0.8390393853187561,
+              "image_cos_sim": 0.22872717678546906
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "headphone",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 3,
+          "valid_count": 3,
+          "detections": [
+            {
+              "class_name": "person",
+              "confidence": 0.8756,
+              "bbox": [
+                336.35,
+                134.99,
+                1021.53,
+                720.0
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.547,
+              "bbox": [
+                987.19,
+                55.37,
+                1279.92,
+                720.0
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.0604,
+              "bbox": [
+                988.33,
+                538.1,
+                1277.84,
+                720.0
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "headphone",
+          "classified_task": "step on something",
+          "task_index": 0,
+          "task_class_similarity": 0.8280932307243347
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "person",
+            "person",
+            "person"
+          ],
+          "confidence_values": [
+            0.8756,
+            0.547,
+            0.0604
+          ],
+          "count": 3
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.8500075340270996,
+            0.7514275312423706,
+            0.60544753074646
+          ],
+          "label_cosine_similarity": [
+            0.8390393853187561,
+            0.8390393257141113,
+            0.8390393853187561
+          ],
+          "crop_cosine_similarity": [
+            0.22872717678546906,
+            0.21735632419586182,
+            0.21376928687095642
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "person",
+              "confidence": 0.8756,
+              "bbox": [
+                336.35,
+                134.99,
+                1021.53,
+                720.0
+              ],
+              "score": 0.3072405186569691,
+              "base_score": 0.8500075340270996,
+              "cos_sim": 0.8390393853187561,
+              "image_cos_sim": 0.22872717678546906
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.547,
+              "bbox": [
+                987.19,
+                55.37,
+                1279.92,
+                720.0
+              ],
+              "score": 0.153464843121171,
+              "base_score": 0.7514275312423706,
+              "cos_sim": 0.8390393257141113,
+              "image_cos_sim": 0.21735632419586182
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.0604,
+              "bbox": [
+                988.33,
+                538.1,
+                1277.84,
+                720.0
+              ],
+              "score": 0.08759463822185994,
+              "base_score": 0.60544753074646,
+              "cos_sim": 0.8390393853187561,
+              "image_cos_sim": 0.21376928687095642
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "person",
+            "confidence": 0.8756,
+            "bbox": [
+              336.35,
+              134.99,
+              1021.53,
+              720.0
+            ],
+            "score": 0.3072405186569691,
+            "base_score": 0.8500075340270996,
+            "cos_sim": 0.8390393853187561,
+            "image_cos_sim": 0.22872717678546906
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\results\\final_model2_output.jpg"
+}

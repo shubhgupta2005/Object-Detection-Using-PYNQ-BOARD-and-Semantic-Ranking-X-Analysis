@@ -1,0 +1,392 @@
+{
+  "vocab_scores": [
+    {
+      "name": "clothes",
+      "use": "wear on the body",
+      "sim": 0.1733
+    },
+    {
+      "name": "shirt",
+      "use": "wear on your upper body",
+      "sim": 0.1313
+    },
+    {
+      "name": "jacket",
+      "use": "keep warm in the cold",
+      "sim": 0.1104
+    },
+    {
+      "name": "hanger",
+      "use": "hang clothes",
+      "sim": 0.103
+    },
+    {
+      "name": "cupboard",
+      "use": "store clothes and things",
+      "sim": 0.102
+    },
+    {
+      "name": "blanket",
+      "use": "keep warm in bed",
+      "sim": 0.0837
+    },
+    {
+      "name": "socks",
+      "use": "wear on feet inside shoes",
+      "sim": 0.0822
+    },
+    {
+      "name": "suitcase",
+      "use": "pack clothes for travel",
+      "sim": 0.0772
+    }
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "task": "clothes",
+  "detector": "world",
+  "vocabulary": [
+    "clothes",
+    "shirt",
+    "jacket",
+    "hanger",
+    "cupboard",
+    "blanket",
+    "socks",
+    "suitcase",
+    "earbuds"
+  ],
+  "classified_task": "step on something",
+  "selected": {
+    "class_name": "clothes",
+    "confidence": 0.088,
+    "bbox": [
+      987.23,
+      131.15,
+      1136.36,
+      570.24
+    ],
+    "score": 0.25292266467809676,
+    "base_score": 0.6898416876792908,
+    "cos_sim": 0.947773814201355,
+    "image_cos_sim": 0.2516297399997711
+  },
+  "ranked": [
+    {
+      "class_name": "clothes",
+      "confidence": 0.088,
+      "bbox": [
+        987.23,
+        131.15,
+        1136.36,
+        570.24
+      ],
+      "detector_label": "blanket",
+      "clip_label_prob": 0.5322,
+      "score": 0.25292266467809676,
+      "base_score": 0.6898416876792908,
+      "cos_sim": 0.947773814201355,
+      "image_cos_sim": 0.2516297399997711
+    },
+    {
+      "class_name": "clothes",
+      "confidence": 0.247,
+      "bbox": [
+        729.51,
+        349.7,
+        881.97,
+        718.21
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.2764,
+      "score": 0.16268292973339557,
+      "base_score": 0.737541675567627,
+      "cos_sim": 0.947773814201355,
+      "image_cos_sim": 0.2394166886806488
+    },
+    {
+      "class_name": "cupboard",
+      "confidence": 0.1419,
+      "bbox": [
+        461.88,
+        350.96,
+        879.18,
+        718.06
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.5845,
+      "score": 0.16089983850774142,
+      "base_score": 0.6186894178390503,
+      "cos_sim": 0.8230277299880981,
+      "image_cos_sim": 0.2489601969718933
+    },
+    {
+      "class_name": "clothes",
+      "confidence": 0.1234,
+      "bbox": [
+        0.3,
+        5.37,
+        402.3,
+        650.02
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.4385,
+      "score": 0.14464950954198838,
+      "base_score": 0.7004616856575012,
+      "cos_sim": 0.947773814201355,
+      "image_cos_sim": 0.2406480461359024
+    },
+    {
+      "class_name": "clothes",
+      "confidence": 0.0757,
+      "bbox": [
+        0.0,
+        142.79,
+        220.84,
+        411.82
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.2307,
+      "score": 0.08618849126189947,
+      "base_score": 0.6861516237258911,
+      "cos_sim": 0.9477736949920654,
+      "image_cos_sim": 0.22183454036712646
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.1747,
+      "bbox": [
+        207.31,
+        196.47,
+        451.27,
+        711.84
+      ],
+      "detector_label": "blanket",
+      "clip_label_prob": 0.3729,
+      "score": 0.08171271384280175,
+      "base_score": 0.6771026849746704,
+      "cos_sim": 0.8924180865287781,
+      "image_cos_sim": 0.23849324882030487
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.1674,
+      "bbox": [
+        120.28,
+        191.71,
+        452.04,
+        717.92
+      ],
+      "detector_label": "clothes",
+      "clip_label_prob": 0.3174,
+      "score": 0.07934827184539289,
+      "base_score": 0.674912691116333,
+      "cos_sim": 0.8924180865287781,
+      "image_cos_sim": 0.23829694092273712
+    },
+    {
+      "class_name": "cupboard",
+      "confidence": 0.1418,
+      "bbox": [
+        451.44,
+        353.73,
+        606.79,
+        713.47
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.3076,
+      "score": 0.03578562028159171,
+      "base_score": 0.6186594367027283,
+      "cos_sim": 0.8230277299880981,
+      "image_cos_sim": 0.2201419174671173
+    },
+    {
+      "class_name": "socks",
+      "confidence": 0.1389,
+      "bbox": [
+        646.21,
+        395.38,
+        743.61,
+        716.52
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.2118,
+      "score": 0.031732689641237224,
+      "base_score": 0.5951984524726868,
+      "cos_sim": 0.7907549142837524,
+      "image_cos_sim": 0.21383681893348694
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.0507,
+      "bbox": [
+        699.33,
+        413.34,
+        757.95,
+        618.77
+      ],
+      "detector_label": "blanket",
+      "clip_label_prob": 0.2579,
+      "score": 0.022595313815735284,
+      "base_score": 0.639902651309967,
+      "cos_sim": 0.8924180865287781,
+      "image_cos_sim": 0.22511525452136993
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.0534,
+      "bbox": [
+        702.35,
+        405.23,
+        757.04,
+        619.48
+      ],
+      "detector_label": "clothes",
+      "clip_label_prob": 0.2806,
+      "score": 0.022061998634897176,
+      "base_score": 0.6407126784324646,
+      "cos_sim": 0.8924180865287781,
+      "image_cos_sim": 0.22419513761997223
+    }
+  ],
+  "detections": [
+    {
+      "class_name": "clothes",
+      "confidence": 0.247,
+      "bbox": [
+        729.51,
+        349.7,
+        881.97,
+        718.21
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.2764
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.1747,
+      "bbox": [
+        207.31,
+        196.47,
+        451.27,
+        711.84
+      ],
+      "detector_label": "blanket",
+      "clip_label_prob": 0.3729
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.1674,
+      "bbox": [
+        120.28,
+        191.71,
+        452.04,
+        717.92
+      ],
+      "detector_label": "clothes",
+      "clip_label_prob": 0.3174
+    },
+    {
+      "class_name": "cupboard",
+      "confidence": 0.1419,
+      "bbox": [
+        461.88,
+        350.96,
+        879.18,
+        718.06
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.5845
+    },
+    {
+      "class_name": "cupboard",
+      "confidence": 0.1418,
+      "bbox": [
+        451.44,
+        353.73,
+        606.79,
+        713.47
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.3076
+    },
+    {
+      "class_name": "socks",
+      "confidence": 0.1389,
+      "bbox": [
+        646.21,
+        395.38,
+        743.61,
+        716.52
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.2118
+    },
+    {
+      "class_name": "clothes",
+      "confidence": 0.1234,
+      "bbox": [
+        0.3,
+        5.37,
+        402.3,
+        650.02
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.4385
+    },
+    {
+      "class_name": "clothes",
+      "confidence": 0.088,
+      "bbox": [
+        987.23,
+        131.15,
+        1136.36,
+        570.24
+      ],
+      "detector_label": "blanket",
+      "clip_label_prob": 0.5322
+    },
+    {
+      "class_name": "clothes",
+      "confidence": 0.0757,
+      "bbox": [
+        0.0,
+        142.79,
+        220.84,
+        411.82
+      ],
+      "detector_label": "cupboard",
+      "clip_label_prob": 0.2307
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.0534,
+      "bbox": [
+        702.35,
+        405.23,
+        757.04,
+        619.48
+      ],
+      "detector_label": "clothes",
+      "clip_label_prob": 0.2806
+    },
+    {
+      "class_name": "shirt",
+      "confidence": 0.0507,
+      "bbox": [
+        699.33,
+        413.34,
+        757.95,
+        618.77
+      ],
+      "detector_label": "blanket",
+      "clip_label_prob": 0.2579
+    }
+  ],
+  "status": "ok",
+  "elapsed_ms": 5711,
+  "id": "2026-10-16_14-52-22_874_clothes",
+  "saved_at": "2026-10-16 14:52:22"
+}

@@ -1,0 +1,252 @@
+{
+  "input_image_path": "C:\\Users\\jaisw\\Downloads\\87557233-cooking-potatoes-in-the-fire-potatoes-thrown-in-ashes.jpg",
+  "image_path": "C:\\Users\\jaisw\\Downloads\\87557233-cooking-potatoes-in-the-fire-potatoes-thrown-in-ashes.jpg",
+  "task": "item wbhich provide carbohydrate is taking out of fire",
+  "detections": [
+    {
+      "class_name": "potato",
+      "confidence": 0.4229,
+      "bbox": [
+        875.48,
+        347.92,
+        1223.06,
+        559.65
+      ]
+    }
+  ],
+  "model2": {
+    "task": "item wbhich provide carbohydrate is taking out of fire",
+    "classified_task": "extinguish fire",
+    "task_index": 12,
+    "task_class_similarity": 0.8317869901657104,
+    "selected_object": {
+      "class_name": "potato",
+      "confidence": 0.4229,
+      "bbox": [
+        875.48,
+        347.92,
+        1223.06,
+        559.65
+      ],
+      "score": 0.6435032080858947,
+      "base_score": 0.6685587167739868,
+      "cos_sim": 0.7738409638404846,
+      "image_cos_sim": 0.1939430981874466
+    },
+    "ranked_objects": [
+      {
+        "class_name": "potato",
+        "confidence": 0.4229,
+        "bbox": [
+          875.48,
+          347.92,
+          1223.06,
+          559.65
+        ],
+        "score": 0.6435032080858947,
+        "base_score": 0.6685587167739868,
+        "cos_sim": 0.7738409638404846,
+        "image_cos_sim": 0.1939430981874466
+      }
+    ],
+    "reasoning_trace": {
+      "task": "item wbhich provide carbohydrate is taking out of fire",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 1,
+            "valid_count": 1,
+            "detections": [
+              {
+                "class_name": "potato",
+                "confidence": 0.4229,
+                "bbox": [
+                  875.48,
+                  347.92,
+                  1223.06,
+                  559.65
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "item wbhich provide carbohydrate is taking out of fire",
+            "classified_task": "extinguish fire",
+            "task_index": 12,
+            "task_class_similarity": 0.8317869901657104
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "potato"
+            ],
+            "confidence_values": [
+              0.4229
+            ],
+            "count": 1
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.6685587167739868
+            ],
+            "label_cosine_similarity": [
+              0.7738409638404846
+            ],
+            "crop_cosine_similarity": [
+              0.1939430981874466
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "potato",
+                "confidence": 0.4229,
+                "bbox": [
+                  875.48,
+                  347.92,
+                  1223.06,
+                  559.65
+                ],
+                "score": 0.6435032080858947,
+                "base_score": 0.6685587167739868,
+                "cos_sim": 0.7738409638404846,
+                "image_cos_sim": 0.1939430981874466
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "potato",
+              "confidence": 0.4229,
+              "bbox": [
+                875.48,
+                347.92,
+                1223.06,
+                559.65
+              ],
+              "score": 0.6435032080858947,
+              "base_score": 0.6685587167739868,
+              "cos_sim": 0.7738409638404846,
+              "image_cos_sim": 0.1939430981874466
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "item wbhich provide carbohydrate is taking out of fire",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 1,
+          "valid_count": 1,
+          "detections": [
+            {
+              "class_name": "potato",
+              "confidence": 0.4229,
+              "bbox": [
+                875.48,
+                347.92,
+                1223.06,
+                559.65
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "item wbhich provide carbohydrate is taking out of fire",
+          "classified_task": "extinguish fire",
+          "task_index": 12,
+          "task_class_similarity": 0.8317869901657104
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "potato"
+          ],
+          "confidence_values": [
+            0.4229
+          ],
+          "count": 1
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.6685587167739868
+          ],
+          "label_cosine_similarity": [
+            0.7738409638404846
+          ],
+          "crop_cosine_similarity": [
+            0.1939430981874466
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "potato",
+              "confidence": 0.4229,
+              "bbox": [
+                875.48,
+                347.92,
+                1223.06,
+                559.65
+              ],
+              "score": 0.6435032080858947,
+              "base_score": 0.6685587167739868,
+              "cos_sim": 0.7738409638404846,
+              "image_cos_sim": 0.1939430981874466
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "potato",
+            "confidence": 0.4229,
+            "bbox": [
+              875.48,
+              347.92,
+              1223.06,
+              559.65
+            ],
+            "score": 0.6435032080858947,
+            "base_score": 0.6685587167739868,
+            "cos_sim": 0.7738409638404846,
+            "image_cos_sim": 0.1939430981874466
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "C:\\Users\\jaisw\\OneDrive\\Desktop\\backup\\results\\final_model2_output_7.jpg"
+}

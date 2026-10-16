@@ -1,0 +1,19 @@
+{
+  "input_image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\web_warmup.jpg",
+  "image_path": "D:\\Capstone project\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)\\Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main\\code\\PJT1\\YOLO_custom\\results\\web_warmup.jpg",
+  "task": "something to drink from",
+  "detector": "classroom",
+  "vocabulary": null,
+  "detections": [
+    {
+      "class_name": "calculator",
+      "confidence": 0.2492,
+      "bbox": [
+        1.06,
+        0.0,
+        628.99,
+        480.0
+      ]
+    }
+  ]
+}

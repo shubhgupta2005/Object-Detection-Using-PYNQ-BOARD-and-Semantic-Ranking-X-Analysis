@@ -1,0 +1,1154 @@
+{
+  "input_image_path": "C:\\Users\\jaisw\\OneDrive\\Desktop\\DVCon26_des\\archive (11)\\coco2017\\test2017\\000000042723.jpg",
+  "image_path": "C:\\Users\\jaisw\\OneDrive\\Desktop\\DVCon26_des\\archive (11)\\coco2017\\test2017\\000000042723.jpg",
+  "task": "object used to serve wine",
+  "detections": [
+    {
+      "class_name": "fork",
+      "confidence": 0.97,
+      "bbox": [
+        208.56,
+        503.06,
+        326.28,
+        639.73
+      ]
+    },
+    {
+      "class_name": "wine glass",
+      "confidence": 0.9147,
+      "bbox": [
+        64.21,
+        313.97,
+        133.49,
+        472.44
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.8688,
+      "bbox": [
+        0.74,
+        66.81,
+        325.68,
+        414.1
+      ]
+    },
+    {
+      "class_name": "bowl",
+      "confidence": 0.8457,
+      "bbox": [
+        158.18,
+        368.51,
+        239.53,
+        456.36
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.757,
+      "bbox": [
+        384.29,
+        165.03,
+        466.83,
+        281.55
+      ]
+    },
+    {
+      "class_name": "cup",
+      "confidence": 0.7554,
+      "bbox": [
+        330.96,
+        345.79,
+        403.59,
+        456.01
+      ]
+    },
+    {
+      "class_name": "dining table",
+      "confidence": 0.6775,
+      "bbox": [
+        0.66,
+        317.13,
+        480.0,
+        637.74
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.6236,
+      "bbox": [
+        61.54,
+        132.78,
+        111.78,
+        192.58
+      ]
+    },
+    {
+      "class_name": "bottle",
+      "confidence": 0.5997,
+      "bbox": [
+        236.06,
+        261.27,
+        336.54,
+        536.44
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.5664,
+      "bbox": [
+        300.94,
+        157.46,
+        371.37,
+        314.16
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.3773,
+      "bbox": [
+        366.58,
+        109.99,
+        479.8,
+        470.17
+      ]
+    },
+    {
+      "class_name": "person",
+      "confidence": 0.3316,
+      "bbox": [
+        199.52,
+        114.97,
+        325.23,
+        354.68
+      ]
+    }
+  ],
+  "model2": {
+    "task": "object used to serve wine",
+    "classified_task": "serve wine",
+    "task_index": 9,
+    "task_class_similarity": 0.9212633371353149,
+    "selected_object": {
+      "class_name": "wine glass",
+      "confidence": 0.9147,
+      "bbox": [
+        64.21,
+        313.97,
+        133.49,
+        472.44
+      ],
+      "score": 0.8073324009776116,
+      "base_score": 0.8991854190826416,
+      "cos_sim": 0.8925362825393677,
+      "image_cos_sim": 0.27349644899368286
+    },
+    "ranked_objects": [
+      {
+        "class_name": "wine glass",
+        "confidence": 0.9147,
+        "bbox": [
+          64.21,
+          313.97,
+          133.49,
+          472.44
+        ],
+        "score": 0.8073324009776116,
+        "base_score": 0.8991854190826416,
+        "cos_sim": 0.8925362825393677,
+        "image_cos_sim": 0.27349644899368286
+      },
+      {
+        "class_name": "fork",
+        "confidence": 0.97,
+        "bbox": [
+          208.56,
+          503.06,
+          326.28,
+          639.73
+        ],
+        "score": 0.7771041132509708,
+        "base_score": 0.8671541810035706,
+        "cos_sim": 0.823077380657196,
+        "image_cos_sim": 0.21973654627799988
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.8688,
+        "bbox": [
+          0.74,
+          66.81,
+          325.68,
+          414.1
+        ],
+        "score": 0.7721041187644004,
+        "base_score": 0.8527592420578003,
+        "cos_sim": 0.8458846807479858,
+        "image_cos_sim": 0.2446320652961731
+      },
+      {
+        "class_name": "cup",
+        "confidence": 0.7554,
+        "bbox": [
+          330.96,
+          345.79,
+          403.59,
+          456.01
+        ],
+        "score": 0.758629571646452,
+        "base_score": 0.8331171274185181,
+        "cos_sim": 0.8664244413375854,
+        "image_cos_sim": 0.24059107899665833
+      },
+      {
+        "class_name": "bowl",
+        "confidence": 0.8457,
+        "bbox": [
+          158.18,
+          368.51,
+          239.53,
+          456.36
+        ],
+        "score": 0.7570603698492051,
+        "base_score": 0.8362514972686768,
+        "cos_sim": 0.832202136516571,
+        "image_cos_sim": 0.21998226642608643
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.757,
+        "bbox": [
+          384.29,
+          165.03,
+          466.83,
+          281.55
+        ],
+        "score": 0.746830266341567,
+        "base_score": 0.8192192912101746,
+        "cos_sim": 0.8458846807479858,
+        "image_cos_sim": 0.22478701174259186
+      },
+      {
+        "class_name": "dining table",
+        "confidence": 0.6775,
+        "bbox": [
+          0.66,
+          317.13,
+          480.0,
+          637.74
+        ],
+        "score": 0.7240964829921723,
+        "base_score": 0.7728700041770935,
+        "cos_sim": 0.8137428760528564,
+        "image_cos_sim": 0.2670341730117798
+      },
+      {
+        "class_name": "bottle",
+        "confidence": 0.5997,
+        "bbox": [
+          236.06,
+          261.27,
+          336.54,
+          536.44
+        ],
+        "score": 0.723187330365181,
+        "base_score": 0.7824997901916504,
+        "cos_sim": 0.8608425259590149,
+        "image_cos_sim": 0.22607123851776123
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.6236,
+        "bbox": [
+          61.54,
+          132.78,
+          111.78,
+          192.58
+        ],
+        "score": 0.7208065845072269,
+        "base_score": 0.7791993021965027,
+        "cos_sim": 0.8458846807479858,
+        "image_cos_sim": 0.22472593188285828
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.5664,
+        "bbox": [
+          300.94,
+          157.46,
+          371.37,
+          314.16
+        ],
+        "score": 0.7062959969043732,
+        "base_score": 0.762039303779602,
+        "cos_sim": 0.8458846807479858,
+        "image_cos_sim": 0.20554542541503906
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.3773,
+        "bbox": [
+          366.58,
+          109.99,
+          479.8,
+          470.17
+        ],
+        "score": 0.6683052435517312,
+        "base_score": 0.705309271812439,
+        "cos_sim": 0.8458846807479858,
+        "image_cos_sim": 0.19916695356369019
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.3316,
+        "bbox": [
+          199.52,
+          114.97,
+          325.23,
+          354.68
+        ],
+        "score": 0.6665670849382878,
+        "base_score": 0.6915993094444275,
+        "cos_sim": 0.8458846807479858,
+        "image_cos_sim": 0.2401573359966278
+      }
+    ],
+    "reasoning_trace": {
+      "task": "object used to serve wine",
+      "stages": [
+        {
+          "stage": "filter_detections",
+          "output": {
+            "input_count": 12,
+            "valid_count": 12,
+            "detections": [
+              {
+                "class_name": "fork",
+                "confidence": 0.97,
+                "bbox": [
+                  208.56,
+                  503.06,
+                  326.28,
+                  639.73
+                ]
+              },
+              {
+                "class_name": "wine glass",
+                "confidence": 0.9147,
+                "bbox": [
+                  64.21,
+                  313.97,
+                  133.49,
+                  472.44
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.8688,
+                "bbox": [
+                  0.74,
+                  66.81,
+                  325.68,
+                  414.1
+                ]
+              },
+              {
+                "class_name": "bowl",
+                "confidence": 0.8457,
+                "bbox": [
+                  158.18,
+                  368.51,
+                  239.53,
+                  456.36
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.757,
+                "bbox": [
+                  384.29,
+                  165.03,
+                  466.83,
+                  281.55
+                ]
+              },
+              {
+                "class_name": "cup",
+                "confidence": 0.7554,
+                "bbox": [
+                  330.96,
+                  345.79,
+                  403.59,
+                  456.01
+                ]
+              },
+              {
+                "class_name": "dining table",
+                "confidence": 0.6775,
+                "bbox": [
+                  0.66,
+                  317.13,
+                  480.0,
+                  637.74
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.6236,
+                "bbox": [
+                  61.54,
+                  132.78,
+                  111.78,
+                  192.58
+                ]
+              },
+              {
+                "class_name": "bottle",
+                "confidence": 0.5997,
+                "bbox": [
+                  236.06,
+                  261.27,
+                  336.54,
+                  536.44
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.5664,
+                "bbox": [
+                  300.94,
+                  157.46,
+                  371.37,
+                  314.16
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.3773,
+                "bbox": [
+                  366.58,
+                  109.99,
+                  479.8,
+                  470.17
+                ]
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.3316,
+                "bbox": [
+                  199.52,
+                  114.97,
+                  325.23,
+                  354.68
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "stage": "task_classification",
+          "output": {
+            "task_text": "object used to serve wine",
+            "classified_task": "serve wine",
+            "task_index": 9,
+            "task_class_similarity": 0.9212633371353149
+          }
+        },
+        {
+          "stage": "object_encoding",
+          "output": {
+            "labels": [
+              "fork",
+              "wine glass",
+              "person",
+              "bowl",
+              "person",
+              "cup",
+              "dining table",
+              "person",
+              "bottle",
+              "person",
+              "person",
+              "person"
+            ],
+            "confidence_values": [
+              0.97,
+              0.9147,
+              0.8688,
+              0.8457,
+              0.757,
+              0.7554,
+              0.6775,
+              0.6236,
+              0.5997,
+              0.5664,
+              0.3773,
+              0.3316
+            ],
+            "count": 12
+          }
+        },
+        {
+          "stage": "similarity_scoring",
+          "output": {
+            "base_scores": [
+              0.8671541810035706,
+              0.8991854190826416,
+              0.8527592420578003,
+              0.8362514972686768,
+              0.8192192912101746,
+              0.8331171274185181,
+              0.7728700041770935,
+              0.7791993021965027,
+              0.7824997901916504,
+              0.762039303779602,
+              0.705309271812439,
+              0.6915993094444275
+            ],
+            "label_cosine_similarity": [
+              0.823077380657196,
+              0.8925362825393677,
+              0.8458846807479858,
+              0.832202136516571,
+              0.8458846807479858,
+              0.8664244413375854,
+              0.8137428760528564,
+              0.8458846807479858,
+              0.8608425259590149,
+              0.8458846807479858,
+              0.8458846807479858,
+              0.8458846807479858
+            ],
+            "crop_cosine_similarity": [
+              0.21973654627799988,
+              0.27349644899368286,
+              0.2446320652961731,
+              0.21998226642608643,
+              0.22478701174259186,
+              0.24059107899665833,
+              0.2670341730117798,
+              0.22472593188285828,
+              0.22607123851776123,
+              0.20554542541503906,
+              0.19916695356369019,
+              0.2401573359966278
+            ]
+          }
+        },
+        {
+          "stage": "fusion_and_ranking",
+          "output": {
+            "ranked_candidates": [
+              {
+                "class_name": "wine glass",
+                "confidence": 0.9147,
+                "bbox": [
+                  64.21,
+                  313.97,
+                  133.49,
+                  472.44
+                ],
+                "score": 0.8073324009776116,
+                "base_score": 0.8991854190826416,
+                "cos_sim": 0.8925362825393677,
+                "image_cos_sim": 0.27349644899368286
+              },
+              {
+                "class_name": "fork",
+                "confidence": 0.97,
+                "bbox": [
+                  208.56,
+                  503.06,
+                  326.28,
+                  639.73
+                ],
+                "score": 0.7771041132509708,
+                "base_score": 0.8671541810035706,
+                "cos_sim": 0.823077380657196,
+                "image_cos_sim": 0.21973654627799988
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.8688,
+                "bbox": [
+                  0.74,
+                  66.81,
+                  325.68,
+                  414.1
+                ],
+                "score": 0.7721041187644004,
+                "base_score": 0.8527592420578003,
+                "cos_sim": 0.8458846807479858,
+                "image_cos_sim": 0.2446320652961731
+              },
+              {
+                "class_name": "cup",
+                "confidence": 0.7554,
+                "bbox": [
+                  330.96,
+                  345.79,
+                  403.59,
+                  456.01
+                ],
+                "score": 0.758629571646452,
+                "base_score": 0.8331171274185181,
+                "cos_sim": 0.8664244413375854,
+                "image_cos_sim": 0.24059107899665833
+              },
+              {
+                "class_name": "bowl",
+                "confidence": 0.8457,
+                "bbox": [
+                  158.18,
+                  368.51,
+                  239.53,
+                  456.36
+                ],
+                "score": 0.7570603698492051,
+                "base_score": 0.8362514972686768,
+                "cos_sim": 0.832202136516571,
+                "image_cos_sim": 0.21998226642608643
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.757,
+                "bbox": [
+                  384.29,
+                  165.03,
+                  466.83,
+                  281.55
+                ],
+                "score": 0.746830266341567,
+                "base_score": 0.8192192912101746,
+                "cos_sim": 0.8458846807479858,
+                "image_cos_sim": 0.22478701174259186
+              },
+              {
+                "class_name": "dining table",
+                "confidence": 0.6775,
+                "bbox": [
+                  0.66,
+                  317.13,
+                  480.0,
+                  637.74
+                ],
+                "score": 0.7240964829921723,
+                "base_score": 0.7728700041770935,
+                "cos_sim": 0.8137428760528564,
+                "image_cos_sim": 0.2670341730117798
+              },
+              {
+                "class_name": "bottle",
+                "confidence": 0.5997,
+                "bbox": [
+                  236.06,
+                  261.27,
+                  336.54,
+                  536.44
+                ],
+                "score": 0.723187330365181,
+                "base_score": 0.7824997901916504,
+                "cos_sim": 0.8608425259590149,
+                "image_cos_sim": 0.22607123851776123
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.6236,
+                "bbox": [
+                  61.54,
+                  132.78,
+                  111.78,
+                  192.58
+                ],
+                "score": 0.7208065845072269,
+                "base_score": 0.7791993021965027,
+                "cos_sim": 0.8458846807479858,
+                "image_cos_sim": 0.22472593188285828
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.5664,
+                "bbox": [
+                  300.94,
+                  157.46,
+                  371.37,
+                  314.16
+                ],
+                "score": 0.7062959969043732,
+                "base_score": 0.762039303779602,
+                "cos_sim": 0.8458846807479858,
+                "image_cos_sim": 0.20554542541503906
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.3773,
+                "bbox": [
+                  366.58,
+                  109.99,
+                  479.8,
+                  470.17
+                ],
+                "score": 0.6683052435517312,
+                "base_score": 0.705309271812439,
+                "cos_sim": 0.8458846807479858,
+                "image_cos_sim": 0.19916695356369019
+              },
+              {
+                "class_name": "person",
+                "confidence": 0.3316,
+                "bbox": [
+                  199.52,
+                  114.97,
+                  325.23,
+                  354.68
+                ],
+                "score": 0.6665670849382878,
+                "base_score": 0.6915993094444275,
+                "cos_sim": 0.8458846807479858,
+                "image_cos_sim": 0.2401573359966278
+              }
+            ]
+          }
+        },
+        {
+          "stage": "selection",
+          "output": {
+            "selected_object": {
+              "class_name": "wine glass",
+              "confidence": 0.9147,
+              "bbox": [
+                64.21,
+                313.97,
+                133.49,
+                472.44
+              ],
+              "score": 0.8073324009776116,
+              "base_score": 0.8991854190826416,
+              "cos_sim": 0.8925362825393677,
+              "image_cos_sim": 0.27349644899368286
+            }
+          }
+        }
+      ]
+    }
+  },
+  "reasoning_trace": {
+    "task": "object used to serve wine",
+    "stages": [
+      {
+        "stage": "filter_detections",
+        "output": {
+          "input_count": 12,
+          "valid_count": 12,
+          "detections": [
+            {
+              "class_name": "fork",
+              "confidence": 0.97,
+              "bbox": [
+                208.56,
+                503.06,
+                326.28,
+                639.73
+              ]
+            },
+            {
+              "class_name": "wine glass",
+              "confidence": 0.9147,
+              "bbox": [
+                64.21,
+                313.97,
+                133.49,
+                472.44
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.8688,
+              "bbox": [
+                0.74,
+                66.81,
+                325.68,
+                414.1
+              ]
+            },
+            {
+              "class_name": "bowl",
+              "confidence": 0.8457,
+              "bbox": [
+                158.18,
+                368.51,
+                239.53,
+                456.36
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.757,
+              "bbox": [
+                384.29,
+                165.03,
+                466.83,
+                281.55
+              ]
+            },
+            {
+              "class_name": "cup",
+              "confidence": 0.7554,
+              "bbox": [
+                330.96,
+                345.79,
+                403.59,
+                456.01
+              ]
+            },
+            {
+              "class_name": "dining table",
+              "confidence": 0.6775,
+              "bbox": [
+                0.66,
+                317.13,
+                480.0,
+                637.74
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.6236,
+              "bbox": [
+                61.54,
+                132.78,
+                111.78,
+                192.58
+              ]
+            },
+            {
+              "class_name": "bottle",
+              "confidence": 0.5997,
+              "bbox": [
+                236.06,
+                261.27,
+                336.54,
+                536.44
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.5664,
+              "bbox": [
+                300.94,
+                157.46,
+                371.37,
+                314.16
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.3773,
+              "bbox": [
+                366.58,
+                109.99,
+                479.8,
+                470.17
+              ]
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.3316,
+              "bbox": [
+                199.52,
+                114.97,
+                325.23,
+                354.68
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "stage": "task_classification",
+        "output": {
+          "task_text": "object used to serve wine",
+          "classified_task": "serve wine",
+          "task_index": 9,
+          "task_class_similarity": 0.9212633371353149
+        }
+      },
+      {
+        "stage": "object_encoding",
+        "output": {
+          "labels": [
+            "fork",
+            "wine glass",
+            "person",
+            "bowl",
+            "person",
+            "cup",
+            "dining table",
+            "person",
+            "bottle",
+            "person",
+            "person",
+            "person"
+          ],
+          "confidence_values": [
+            0.97,
+            0.9147,
+            0.8688,
+            0.8457,
+            0.757,
+            0.7554,
+            0.6775,
+            0.6236,
+            0.5997,
+            0.5664,
+            0.3773,
+            0.3316
+          ],
+          "count": 12
+        }
+      },
+      {
+        "stage": "similarity_scoring",
+        "output": {
+          "base_scores": [
+            0.8671541810035706,
+            0.8991854190826416,
+            0.8527592420578003,
+            0.8362514972686768,
+            0.8192192912101746,
+            0.8331171274185181,
+            0.7728700041770935,
+            0.7791993021965027,
+            0.7824997901916504,
+            0.762039303779602,
+            0.705309271812439,
+            0.6915993094444275
+          ],
+          "label_cosine_similarity": [
+            0.823077380657196,
+            0.8925362825393677,
+            0.8458846807479858,
+            0.832202136516571,
+            0.8458846807479858,
+            0.8664244413375854,
+            0.8137428760528564,
+            0.8458846807479858,
+            0.8608425259590149,
+            0.8458846807479858,
+            0.8458846807479858,
+            0.8458846807479858
+          ],
+          "crop_cosine_similarity": [
+            0.21973654627799988,
+            0.27349644899368286,
+            0.2446320652961731,
+            0.21998226642608643,
+            0.22478701174259186,
+            0.24059107899665833,
+            0.2670341730117798,
+            0.22472593188285828,
+            0.22607123851776123,
+            0.20554542541503906,
+            0.19916695356369019,
+            0.2401573359966278
+          ]
+        }
+      },
+      {
+        "stage": "fusion_and_ranking",
+        "output": {
+          "ranked_candidates": [
+            {
+              "class_name": "wine glass",
+              "confidence": 0.9147,
+              "bbox": [
+                64.21,
+                313.97,
+                133.49,
+                472.44
+              ],
+              "score": 0.8073324009776116,
+              "base_score": 0.8991854190826416,
+              "cos_sim": 0.8925362825393677,
+              "image_cos_sim": 0.27349644899368286
+            },
+            {
+              "class_name": "fork",
+              "confidence": 0.97,
+              "bbox": [
+                208.56,
+                503.06,
+                326.28,
+                639.73
+              ],
+              "score": 0.7771041132509708,
+              "base_score": 0.8671541810035706,
+              "cos_sim": 0.823077380657196,
+              "image_cos_sim": 0.21973654627799988
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.8688,
+              "bbox": [
+                0.74,
+                66.81,
+                325.68,
+                414.1
+              ],
+              "score": 0.7721041187644004,
+              "base_score": 0.8527592420578003,
+              "cos_sim": 0.8458846807479858,
+              "image_cos_sim": 0.2446320652961731
+            },
+            {
+              "class_name": "cup",
+              "confidence": 0.7554,
+              "bbox": [
+                330.96,
+                345.79,
+                403.59,
+                456.01
+              ],
+              "score": 0.758629571646452,
+              "base_score": 0.8331171274185181,
+              "cos_sim": 0.8664244413375854,
+              "image_cos_sim": 0.24059107899665833
+            },
+            {
+              "class_name": "bowl",
+              "confidence": 0.8457,
+              "bbox": [
+                158.18,
+                368.51,
+                239.53,
+                456.36
+              ],
+              "score": 0.7570603698492051,
+              "base_score": 0.8362514972686768,
+              "cos_sim": 0.832202136516571,
+              "image_cos_sim": 0.21998226642608643
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.757,
+              "bbox": [
+                384.29,
+                165.03,
+                466.83,
+                281.55
+              ],
+              "score": 0.746830266341567,
+              "base_score": 0.8192192912101746,
+              "cos_sim": 0.8458846807479858,
+              "image_cos_sim": 0.22478701174259186
+            },
+            {
+              "class_name": "dining table",
+              "confidence": 0.6775,
+              "bbox": [
+                0.66,
+                317.13,
+                480.0,
+                637.74
+              ],
+              "score": 0.7240964829921723,
+              "base_score": 0.7728700041770935,
+              "cos_sim": 0.8137428760528564,
+              "image_cos_sim": 0.2670341730117798
+            },
+            {
+              "class_name": "bottle",
+              "confidence": 0.5997,
+              "bbox": [
+                236.06,
+                261.27,
+                336.54,
+                536.44
+              ],
+              "score": 0.723187330365181,
+              "base_score": 0.7824997901916504,
+              "cos_sim": 0.8608425259590149,
+              "image_cos_sim": 0.22607123851776123
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.6236,
+              "bbox": [
+                61.54,
+                132.78,
+                111.78,
+                192.58
+              ],
+              "score": 0.7208065845072269,
+              "base_score": 0.7791993021965027,
+              "cos_sim": 0.8458846807479858,
+              "image_cos_sim": 0.22472593188285828
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.5664,
+              "bbox": [
+                300.94,
+                157.46,
+                371.37,
+                314.16
+              ],
+              "score": 0.7062959969043732,
+              "base_score": 0.762039303779602,
+              "cos_sim": 0.8458846807479858,
+              "image_cos_sim": 0.20554542541503906
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.3773,
+              "bbox": [
+                366.58,
+                109.99,
+                479.8,
+                470.17
+              ],
+              "score": 0.6683052435517312,
+              "base_score": 0.705309271812439,
+              "cos_sim": 0.8458846807479858,
+              "image_cos_sim": 0.19916695356369019
+            },
+            {
+              "class_name": "person",
+              "confidence": 0.3316,
+              "bbox": [
+                199.52,
+                114.97,
+                325.23,
+                354.68
+              ],
+              "score": 0.6665670849382878,
+              "base_score": 0.6915993094444275,
+              "cos_sim": 0.8458846807479858,
+              "image_cos_sim": 0.2401573359966278
+            }
+          ]
+        }
+      },
+      {
+        "stage": "selection",
+        "output": {
+          "selected_object": {
+            "class_name": "wine glass",
+            "confidence": 0.9147,
+            "bbox": [
+              64.21,
+              313.97,
+              133.49,
+              472.44
+            ],
+            "score": 0.8073324009776116,
+            "base_score": 0.8991854190826416,
+            "cos_sim": 0.8925362825393677,
+            "image_cos_sim": 0.27349644899368286
+          }
+        }
+      }
+    ]
+  },
+  "final_output_image": "YOLO_custom/results/final_model2_output.jpg"
+}

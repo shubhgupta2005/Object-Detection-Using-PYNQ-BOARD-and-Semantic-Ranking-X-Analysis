@@ -1,0 +1,18 @@
+# Task-Aware Object Selection Model – Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core ML framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Detector Model 1
+ultralytics>=8.3.0
+
+# CLIP backend (preferred – open_clip)
+open-clip-torch>=2.20.0
+
+# Numeric / utility
+numpy>=1.24.0,<2.0.0
+
+# Visualization output (labeled boxes)
+pillow>=10.0.0

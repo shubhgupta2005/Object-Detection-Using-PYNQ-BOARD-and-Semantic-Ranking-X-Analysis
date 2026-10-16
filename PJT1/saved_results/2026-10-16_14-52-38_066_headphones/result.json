@@ -1,0 +1,168 @@
+{
+  "vocab_scores": [
+    {
+      "name": "headphones",
+      "use": "listen to music or audio",
+      "sim": 0.1997
+    },
+    {
+      "name": "earphones",
+      "use": "listen to music or calls in your ears",
+      "sim": 0.189
+    },
+    {
+      "name": "earbuds",
+      "use": "listen to music wirelessly",
+      "sim": 0.1697
+    },
+    {
+      "name": "microphone",
+      "use": "speak louder to an audience",
+      "sim": 0.0778
+    },
+    {
+      "name": "sunglasses",
+      "use": "protect eyes from the sun",
+      "sim": 0.0621
+    },
+    {
+      "name": "speaker",
+      "use": "play music out loud",
+      "sim": 0.0607
+    },
+    {
+      "name": "helmet",
+      "use": "protect the head while riding",
+      "sim": 0.0588
+    },
+    {
+      "name": "glasses",
+      "use": "see clearly and read",
+      "sim": 0.0553
+    }
+  ],
+  "image_size": [
+    1280,
+    720
+  ],
+  "task": "headphones",
+  "detector": "world",
+  "vocabulary": [
+    "headphones",
+    "earphones",
+    "earbuds",
+    "microphone",
+    "sunglasses",
+    "speaker",
+    "helmet",
+    "glasses",
+    "cell phone"
+  ],
+  "classified_task": "step on something",
+  "selected": {
+    "class_name": "headphones",
+    "confidence": 0.2001,
+    "bbox": [
+      644.92,
+      255.99,
+      774.82,
+      469.91
+    ],
+    "score": 0.5257451286506654,
+    "base_score": 0.7276239991188049,
+    "cos_sim": 0.9537057280540466,
+    "image_cos_sim": 0.29778775572776794
+  },
+  "ranked": [
+    {
+      "class_name": "headphones",
+      "confidence": 0.2001,
+      "bbox": [
+        644.92,
+        255.99,
+        774.82,
+        469.91
+      ],
+      "detector_label": "headphones",
+      "clip_label_prob": 0.581,
+      "score": 0.5257451286506654,
+      "base_score": 0.7276239991188049,
+      "cos_sim": 0.9537057280540466,
+      "image_cos_sim": 0.29778775572776794
+    },
+    {
+      "class_name": "headphones",
+      "confidence": 0.1446,
+      "bbox": [
+        504.35,
+        248.28,
+        768.82,
+        469.04
+      ],
+      "detector_label": "sunglasses",
+      "clip_label_prob": 0.7229,
+      "score": 0.2564568630886078,
+      "base_score": 0.7109739184379578,
+      "cos_sim": 0.9537056088447571,
+      "image_cos_sim": 0.28752583265304565
+    },
+    {
+      "class_name": "headphones",
+      "confidence": 0.0834,
+      "bbox": [
+        667.6,
+        346.05,
+        776.68,
+        470.71
+      ],
+      "detector_label": "microphone",
+      "clip_label_prob": 0.2755,
+      "score": 0.10341803850542754,
+      "base_score": 0.6926140189170837,
+      "cos_sim": 0.9537057280540466,
+      "image_cos_sim": 0.25006383657455444
+    }
+  ],
+  "detections": [
+    {
+      "class_name": "headphones",
+      "confidence": 0.2001,
+      "bbox": [
+        644.92,
+        255.99,
+        774.82,
+        469.91
+      ],
+      "detector_label": "headphones",
+      "clip_label_prob": 0.581
+    },
+    {
+      "class_name": "headphones",
+      "confidence": 0.1446,
+      "bbox": [
+        504.35,
+        248.28,
+        768.82,
+        469.04
+      ],
+      "detector_label": "sunglasses",
+      "clip_label_prob": 0.7229
+    },
+    {
+      "class_name": "headphones",
+      "confidence": 0.0834,
+      "bbox": [
+        667.6,
+        346.05,
+        776.68,
+        470.71
+      ],
+      "detector_label": "microphone",
+      "clip_label_prob": 0.2755
+    }
+  ],
+  "status": "ok",
+  "elapsed_ms": 3611,
+  "id": "2026-10-16_14-52-38_066_headphones",
+  "saved_at": "2026-10-16 14:52:38"
+}

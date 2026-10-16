@@ -1,0 +1,567 @@
+{
+ "training": {
+  "cpu": {
+   "label": "CPU \u00b7 416 px \u00b7 10 layers frozen",
+   "points": [
+    [
+     1,
+     0.194
+    ],
+    [
+     2,
+     0.2829
+    ],
+    [
+     3,
+     0.3684
+    ],
+    [
+     4,
+     0.4212
+    ],
+    [
+     5,
+     0.4418
+    ],
+    [
+     6,
+     0.4614
+    ],
+    [
+     7,
+     0.4647
+    ],
+    [
+     8,
+     0.5227
+    ],
+    [
+     9,
+     0.4893
+    ],
+    [
+     10,
+     0.494
+    ],
+    [
+     11,
+     0.5094
+    ],
+    [
+     12,
+     0.5017
+    ],
+    [
+     13,
+     0.5019
+    ],
+    [
+     14,
+     0.5089
+    ],
+    [
+     15,
+     0.4977
+    ],
+    [
+     16,
+     0.4954
+    ],
+    [
+     17,
+     0.4795
+    ],
+    [
+     18,
+     0.4832
+    ],
+    [
+     19,
+     0.5076
+    ],
+    [
+     20,
+     0.5041
+    ]
+   ],
+   "best_epoch": 8,
+   "best_map50": 0.5227
+  },
+  "gpu": {
+   "label": "GPU \u00b7 640 px \u00b7 full network",
+   "points": [
+    [
+     1,
+     0.1799
+    ],
+    [
+     2,
+     0.2633
+    ],
+    [
+     3,
+     0.3559
+    ],
+    [
+     4,
+     0.3839
+    ],
+    [
+     5,
+     0.3979
+    ],
+    [
+     6,
+     0.3744
+    ],
+    [
+     7,
+     0.4195
+    ],
+    [
+     8,
+     0.429
+    ],
+    [
+     9,
+     0.4588
+    ],
+    [
+     10,
+     0.4696
+    ],
+    [
+     11,
+     0.4781
+    ],
+    [
+     12,
+     0.4828
+    ],
+    [
+     13,
+     0.4783
+    ],
+    [
+     14,
+     0.4942
+    ],
+    [
+     15,
+     0.4913
+    ],
+    [
+     16,
+     0.5156
+    ],
+    [
+     17,
+     0.4858
+    ],
+    [
+     18,
+     0.5333
+    ],
+    [
+     19,
+     0.5235
+    ],
+    [
+     20,
+     0.4907
+    ],
+    [
+     21,
+     0.5177
+    ],
+    [
+     22,
+     0.5236
+    ],
+    [
+     23,
+     0.5184
+    ],
+    [
+     24,
+     0.517
+    ],
+    [
+     25,
+     0.5094
+    ],
+    [
+     26,
+     0.5178
+    ],
+    [
+     27,
+     0.5023
+    ],
+    [
+     28,
+     0.5192
+    ],
+    [
+     29,
+     0.4924
+    ],
+    [
+     30,
+     0.5192
+    ],
+    [
+     31,
+     0.5193
+    ],
+    [
+     32,
+     0.5157
+    ],
+    [
+     33,
+     0.5153
+    ],
+    [
+     34,
+     0.5022
+    ]
+   ],
+   "best_epoch": 18,
+   "best_map50": 0.5333
+  }
+ },
+ "dataset": {
+  "train_images": 1167,
+  "val_images": 175,
+  "classes": 46,
+  "source": "Google Open Images (validation + test splits, human-verified boxes)"
+ },
+ "per_class": {
+  "map50": 0.5306,
+  "map50_95": 0.4059,
+  "classes": [
+   {
+    "name": "calculator",
+    "ap50": 0.995
+   },
+   {
+    "name": "envelope",
+    "ap50": 0.995
+   },
+   {
+    "name": "mouse",
+    "ap50": 0.995
+   },
+   {
+    "name": "bottle",
+    "ap50": 0.995
+   },
+   {
+    "name": "lamp",
+    "ap50": 0.995
+   },
+   {
+    "name": "light switch",
+    "ap50": 0.995
+   },
+   {
+    "name": "ceiling fan",
+    "ap50": 0.945
+   },
+   {
+    "name": "clock",
+    "ap50": 0.9061
+   },
+   {
+    "name": "remote control",
+    "ap50": 0.8867
+   },
+   {
+    "name": "keyboard",
+    "ap50": 0.835
+   },
+   {
+    "name": "tv",
+    "ap50": 0.83
+   },
+   {
+    "name": "monitor",
+    "ap50": 0.8283
+   },
+   {
+    "name": "printer",
+    "ap50": 0.72
+   },
+   {
+    "name": "ruler",
+    "ap50": 0.698
+   },
+   {
+    "name": "mug",
+    "ap50": 0.6814
+   },
+   {
+    "name": "glasses",
+    "ap50": 0.6751
+   },
+   {
+    "name": "picture frame",
+    "ap50": 0.6465
+   },
+   {
+    "name": "cell phone",
+    "ap50": 0.6117
+   },
+   {
+    "name": "whiteboard",
+    "ap50": 0.5819
+   },
+   {
+    "name": "umbrella",
+    "ap50": 0.575
+   },
+   {
+    "name": "watch",
+    "ap50": 0.5689
+   },
+   {
+    "name": "curtain",
+    "ap50": 0.5399
+   },
+   {
+    "name": "tablet",
+    "ap50": 0.5027
+   },
+   {
+    "name": "pen",
+    "ap50": 0.4714
+   },
+   {
+    "name": "backpack",
+    "ap50": 0.4475
+   },
+   {
+    "name": "laptop",
+    "ap50": 0.4253
+   },
+   {
+    "name": "book",
+    "ap50": 0.4183
+   },
+   {
+    "name": "stool",
+    "ap50": 0.3933
+   },
+   {
+    "name": "handbag",
+    "ap50": 0.3922
+   },
+   {
+    "name": "towel",
+    "ap50": 0.3877
+   },
+   {
+    "name": "cupboard",
+    "ap50": 0.3798
+   },
+   {
+    "name": "couch",
+    "ap50": 0.3762
+   },
+   {
+    "name": "headphones",
+    "ap50": 0.3477
+   },
+   {
+    "name": "poster",
+    "ap50": 0.3413
+   },
+   {
+    "name": "bookshelf",
+    "ap50": 0.3228
+   },
+   {
+    "name": "chair",
+    "ap50": 0.3105
+   },
+   {
+    "name": "helmet",
+    "ap50": 0.2663
+   },
+   {
+    "name": "door",
+    "ap50": 0.1877
+   },
+   {
+    "name": "dustbin",
+    "ap50": 0.1687
+   },
+   {
+    "name": "bench",
+    "ap50": 0.1667
+   },
+   {
+    "name": "table",
+    "ap50": 0.1477
+   },
+   {
+    "name": "pencil case",
+    "ap50": 0.1242
+   },
+   {
+    "name": "microphone",
+    "ap50": 0.1165
+   },
+   {
+    "name": "box",
+    "ap50": 0.1085
+   },
+   {
+    "name": "desk",
+    "ap50": 0.0538
+   },
+   {
+    "name": "window",
+    "ap50": 0.0513
+   }
+  ]
+ },
+ "review": [
+  {
+   "n": 1,
+   "task": "the person stepped on something",
+   "selected": "person",
+   "confidence": 0.9265,
+   "score": 0.7958,
+   "detections": 3,
+   "runner_up": "skateboard"
+  },
+  {
+   "n": 2,
+   "task": "i want to sit in a relaxed manner",
+   "selected": "toilet",
+   "confidence": 0.8756,
+   "score": 0.7632,
+   "detections": 2,
+   "runner_up": "sink"
+  },
+  {
+   "n": 3,
+   "task": "something which smells good",
+   "selected": "vase",
+   "confidence": 0.9111,
+   "score": 0.7479,
+   "detections": 2,
+   "runner_up": "vase"
+  },
+  {
+   "n": 4,
+   "task": "item wbhich provide carbohydrate is taking out of fire",
+   "selected": "potato",
+   "confidence": 0.4229,
+   "score": 0.6435,
+   "detections": 1,
+   "runner_up": null
+  },
+  {
+   "n": 5,
+   "task": "someone is watering the plant",
+   "selected": "person",
+   "confidence": 0.7932,
+   "score": 0.7428,
+   "detections": 1,
+   "runner_up": null
+  },
+  {
+   "n": 6,
+   "task": "something is to be taken away from tea cup",
+   "selected": "orange",
+   "confidence": 0.6516,
+   "score": 0.6967,
+   "detections": 2,
+   "runner_up": "orange"
+  },
+  {
+   "n": 7,
+   "task": "someone digs hole",
+   "selected": "person",
+   "confidence": 0.4517,
+   "score": 0.6815,
+   "detections": 1,
+   "runner_up": null
+  },
+  {
+   "n": 8,
+   "task": "bear bottle open",
+   "selected": "bottle",
+   "confidence": 0.8774,
+   "score": 0.8139,
+   "detections": 4,
+   "runner_up": "person"
+  },
+  {
+   "n": 9,
+   "task": "someone is opening parcel",
+   "selected": "person",
+   "confidence": 0.5267,
+   "score": 0.719,
+   "detections": 2,
+   "runner_up": "remote"
+  },
+  {
+   "n": 10,
+   "task": "object used to serve wine",
+   "selected": "wine glass",
+   "confidence": 0.9147,
+   "score": 0.8073,
+   "detections": 12,
+   "runner_up": "fork"
+  },
+  {
+   "n": 11,
+   "task": "substance which contain sugar",
+   "selected": "cup",
+   "confidence": 0.8693,
+   "score": 0.7746,
+   "detections": 10,
+   "runner_up": "cup"
+  },
+  {
+   "n": 12,
+   "task": "item to smear button on bread",
+   "selected": "knife",
+   "confidence": 0.9055,
+   "score": 0.7656,
+   "detections": 9,
+   "runner_up": "sandwich"
+  },
+  {
+   "n": 13,
+   "task": "object that is use to control fire",
+   "selected": "fire hydrant",
+   "confidence": 0.8796,
+   "score": 0.764,
+   "detections": 3,
+   "runner_up": "car"
+  },
+  {
+   "n": 14,
+   "task": "something is being placed to pound carpet",
+   "selected": "couch",
+   "confidence": 0.9321,
+   "score": 0.7536,
+   "detections": 7,
+   "runner_up": "chair"
+  }
+ ],
+ "latency_ms": {
+  "yolo11n": 1806,
+  "world": 4353,
+  "classroom": 1173
+ },
+ "vocab_eval": {
+  "passed": 28,
+  "total": 28
+ }
+}

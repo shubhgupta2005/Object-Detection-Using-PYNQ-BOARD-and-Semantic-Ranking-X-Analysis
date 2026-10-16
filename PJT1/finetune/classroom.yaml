@@ -1,0 +1,51 @@
+# Classroom / room objects from Open Images (built by prepare_openimages.py)
+path: D:/Capstone project/Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main (2)/Object-Detection-Using-PYNQ-BOARD-and-Semantic-Ranking-X-Analysis-main/code/PJT1/finetune/datasets/classroom
+train: images/train
+val: images/val
+names:
+  0: whiteboard
+  1: desk
+  2: table
+  3: chair
+  4: stool
+  5: bench
+  6: couch
+  7: book
+  8: pen
+  9: pencil case
+  10: ruler
+  11: calculator
+  12: envelope
+  13: laptop
+  14: monitor
+  15: keyboard
+  16: mouse
+  17: printer
+  18: tablet
+  19: tv
+  20: remote control
+  21: cell phone
+  22: headphones
+  23: microphone
+  24: backpack
+  25: handbag
+  26: bottle
+  27: mug
+  28: glasses
+  29: clock
+  30: watch
+  31: lamp
+  32: ceiling fan
+  33: light switch
+  34: door
+  35: window
+  36: curtain
+  37: bookshelf
+  38: cupboard
+  39: dustbin
+  40: box
+  41: poster
+  42: picture frame
+  43: towel
+  44: helmet
+  45: umbrella
