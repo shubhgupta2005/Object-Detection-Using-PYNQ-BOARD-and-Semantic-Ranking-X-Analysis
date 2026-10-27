@@ -55,6 +55,21 @@ MEDIA = {
 }
 MEDIA_CHUNK = 256 * 1024
 
+# Review-III documents. Browsers can only display PDFs, so each document is viewed from a PDF export
+# placed in the same folder (newest *.pdf whose name contains `keyword`); the original is a download.
+REVIEW3_DIR = REPO_ROOT.parent / "Review 3"
+DOCS = {
+    "report": {"title": "Final project report", "keyword": "report", "exclude": "review-iii",
+               "source": REVIEW3_DIR / "Final_Report_Task_Aware_Object_Identification (1).docx"},
+    "slides": {"title": "Review-III presentation", "keyword": "review", "exclude": "report",
+               "source": REVIEW3_DIR / "Review-III_Task_Aware_Object_Identification.pptx"},
+}
+DOC_TYPES = {
+    ".pdf": "application/pdf",
+    ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ".pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+}
+
 STATIC_TYPES = {
     ".html": "text/html; charset=utf-8",
     ".css": "text/css; charset=utf-8",
@@ -214,6 +229,28 @@ def _board_watcher() -> None:
         time.sleep(BOARD_POLL_SECONDS)
 
 
+def _doc_pdf(doc: Dict[str, Any]) -> Path | None:
+    pdfs = [p for p in REVIEW3_DIR.glob("*.pdf")
+            if doc["keyword"] in p.name.lower() and doc["exclude"] not in p.name.lower()]
+    return max(pdfs, key=lambda p: p.stat().st_mtime, default=None)
+
+
+def _docs_list() -> list:
+    docs = []
+    for key, doc in DOCS.items():
+        pdf, source = _doc_pdf(doc), doc["source"]
+        docs.append({
+            "key": key,
+            "title": doc["title"],
+            "pdf": pdf.name if pdf else None,
+            "pdf_size": pdf.stat().st_size if pdf else None,
+            "source": source.name if source.is_file() else None,
+            "source_size": source.stat().st_size if source.is_file() else None,
+            "source_ext": source.suffix.lstrip("."),
+        })
+    return docs
+
+
 def _save_result(result: Dict[str, Any], image_bytes: bytes) -> tuple:
     """Write one dashboard run to saved_results/<id>/ and return (id, saved_at)."""
     from PIL import Image, ImageDraw
@@ -349,8 +386,8 @@ class DashboardHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
-    def _send_media(self, path: Path) -> None:
-        """Stream an MP4 with HTTP Range support so the browser can seek."""
+    def _send_media(self, path: Path, content_type: str = "video/mp4", disposition: str | None = None) -> None:
+        """Stream a file (MP4 by default) with HTTP Range support so the browser can seek."""
         size = path.stat().st_size
         start, end = 0, size - 1
         range_header = self.headers.get("Range", "")
@@ -375,7 +412,9 @@ class DashboardHandler(BaseHTTPRequestHandler):
         else:
             self.send_response(HTTPStatus.OK)
 
-        self.send_header("Content-Type", "video/mp4")
+        self.send_header("Content-Type", content_type)
+        if disposition:
+            self.send_header("Content-Disposition", f'{disposition}; filename="{path.name}"')
         self.send_header("Accept-Ranges", "bytes")
         self.send_header("Content-Length", str(end - start + 1))
         self.send_header("Cache-Control", "max-age=3600")
@@ -440,6 +479,21 @@ class DashboardHandler(BaseHTTPRequestHandler):
             self.send_header("Cache-Control", "max-age=3600")
             self.end_headers()
             self.wfile.write(body)
+            return
+        if route == "/api/docs":
+            self._send_json(HTTPStatus.OK, {"docs": _docs_list()})
+            return
+        if route.startswith("/docs/"):
+            # /docs/<key>.pdf shows the PDF in the page; /docs/<key>/download sends the original file.
+            name = route[len("/docs/"):]
+            key, download = (name[:-len("/download")], True) if name.endswith("/download") else (name.removesuffix(".pdf"), False)
+            doc = DOCS.get(key)
+            path = (doc["source"] if download else _doc_pdf(doc)) if doc else None
+            if path is None or not path.is_file():
+                self.send_error(HTTPStatus.NOT_FOUND)
+                return
+            self._send_media(path, DOC_TYPES.get(path.suffix.lower(), "application/octet-stream"),
+                             "attachment" if download else "inline")
             return
         if route.startswith("/media/"):
             media = MEDIA.get(route[len("/media/"):])

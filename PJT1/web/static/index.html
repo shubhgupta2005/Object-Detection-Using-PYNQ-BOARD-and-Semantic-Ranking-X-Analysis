@@ -514,6 +514,30 @@
   }
   .shot-body .pick span { font: 12px var(--mono); color: var(--muted); }
 
+  /* Review-III documents */
+  section.docs { padding: 56px 0 10px; }
+  section.docs h2.title { font-size: clamp(22px, 3vw, 32px); margin: 6px 0 8px; letter-spacing: -0.4px; }
+  .doc-cards { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .doc-card { padding: 18px; display: grid; gap: 10px; align-content: start; }
+  .doc-card .badge {
+    justify-self: start; font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: 0.6px;
+    padding: 3px 10px; border-radius: 999px; color: var(--on-accent); background: var(--accent);
+  }
+  .doc-card.slides .badge { background: var(--accent-2); }
+  .doc-card h3 { margin: 0; font-size: 18px; }
+  .doc-card small { color: var(--dim); font: 12px var(--mono); overflow-wrap: anywhere; }
+  .doc-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .doc-btn {
+    font: 600 14px var(--sans); border-radius: 10px; border: 1px solid var(--line-2); background: var(--panel-2);
+    color: var(--text); padding: 11px 16px; text-decoration: none;
+  }
+  .doc-btn:hover { border-color: var(--accent); }
+  .doc-note { margin: 0; font-size: 13px; color: var(--muted); }
+  .doc-viewer { margin-top: 16px; overflow: hidden; }
+  .doc-viewer .panel-head a { color: var(--accent); font-size: 13px; }
+  .doc-viewer .panel-head button { padding: 6px 12px; font-size: 13px; }
+  .doc-viewer iframe { display: block; width: 100%; height: min(85vh, 1000px); border: 0; background: #525659; }
+
   /* Team */
   section.team { padding: 56px 0 0; }
   section.team h2.title { font-size: clamp(22px, 3vw, 32px); margin: 6px 0 18px; letter-spacing: -0.4px; }
@@ -566,6 +590,7 @@
       <a href="#hardware">System</a>
       <a href="#videos">Videos</a>
       <a href="#results">Results</a>
+      <a href="#docs">Report &amp; PPT</a>
       <a href="#team">Team</a>
     </nav>
     <div class="pills">
@@ -892,6 +917,21 @@
     <h2 class="title">Review-II test results</h2>
     <p class="lede">The 14 task prompts tested at Review-II on COCO test images: the task, the object the system picked, and its score.</p>
     <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <section class="docs" id="docs">
+    <div class="eyebrow">Review-III</div>
+    <h2 class="title">Project report &amp; presentation</h2>
+    <p class="lede">Read the final report and the Review-III slides right here, or download the original Word / PowerPoint files.</p>
+    <div class="doc-cards" id="docCards"><p class="empty-note">Loading documents…</p></div>
+    <div class="panel doc-viewer" id="docViewer" hidden>
+      <div class="panel-head">
+        <h2 id="docViewerTitle"></h2><span class="spacer"></span>
+        <a id="docViewerTab" target="_blank" rel="noopener">Open in new tab ↗</a>
+        <button type="button" id="docViewerClose">Close</button>
+      </div>
+      <iframe id="docFrame" title="Document viewer"></iframe>
+    </div>
   </section>
 
   <section class="team" id="team">
@@ -1643,6 +1683,42 @@
     drawHistory();
     $("resultView").scrollIntoView({ behavior: "smooth", block: "center" });
   });
+
+  // ── Review-III documents (served from the "Review 3" folder) ──
+  const mb = (bytes) => (bytes / 1e6).toFixed(1) + " MB";
+  async function loadDocs() {
+    let docs = [];
+    try {
+      const res = await fetch("/api/docs");
+      if (res.ok) docs = (await res.json()).docs;
+    } catch { /* server offline: show the empty note */ }
+    $("docCards").innerHTML = docs.map((d) => `
+      <div class="panel doc-card ${d.key}">
+        <span class="badge">${d.key === "slides" ? "Slides" : "Report"}</span>
+        <h3>${escapeHtml(d.title)}</h3>
+        <small>${escapeHtml(d.pdf || d.source || "file missing")}${d.pdf ? ` · ${mb(d.pdf_size)}` : d.source ? ` · ${mb(d.source_size)}` : ""}</small>
+        <div class="doc-actions">
+          ${d.pdf ? `<button type="button" class="primary" data-view="${d.key}" data-title="${escapeHtml(d.title)}">View here</button>` : ""}
+          ${d.source ? `<a class="doc-btn" href="/docs/${d.key}/download" download>Download .${escapeHtml(d.source_ext)}</a>` : ""}
+        </div>
+        ${d.pdf ? "" : `<p class="doc-note">To view it here, save a PDF export into the <b>Review 3</b> folder (its name must contain “${d.key === "slides" ? "Review" : "Report"}”), then refresh.</p>`}
+      </div>`).join("") || `<p class="empty-note">No documents found in the Review 3 folder.</p>`;
+  }
+  $("docCards").addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-view]");
+    if (!btn) return;
+    const url = `/docs/${btn.dataset.view}.pdf`;
+    $("docViewerTitle").textContent = btn.dataset.title;
+    $("docViewerTab").href = url;
+    $("docFrame").src = url;
+    $("docViewer").hidden = false;
+    $("docViewer").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  $("docViewerClose").addEventListener("click", () => {
+    $("docViewer").hidden = true;
+    $("docFrame").src = "about:blank";
+  });
+  loadDocs();
 
   // ── Results charts (data from static/data/site.json) ──────────
   const SVGNS = "http://www.w3.org/2000/svg";
