@@ -13,8 +13,10 @@ from __future__ import annotations
 
 import argparse
 import base64
+import importlib.util
 import json
 import re
+import shutil
 import socket
 import subprocess
 import sys
@@ -73,8 +75,18 @@ HISTORY_LIMIT = 50
 BOARD_IPS = ["192.168.2.99"]
 BOARD_PORTS = {22: "SSH", 9090: "Jupyter", 80: "HTTP"}
 BOARD_POLL_SECONDS = 4
+# When True, tests can only run while the board is connected. TEMPORARILY OFF for testing: set back to True.
+REQUIRE_BOARD = False
 _board_lock = threading.Lock()
-_board_state: Dict[str, Any] = {"connected": False, "checked_at": None, "network": None, "usb": []}
+_board_state: Dict[str, Any] = {"connected": False, "checked_at": None, "network": None, "usb": [],
+                                "required": REQUIRE_BOARD}
+
+# Offline speech-to-text for the mic button: Whisper runs on this computer, no internet needed.
+# It decodes the browser's audio with ffmpeg, so both must be present.
+WHISPER_MODEL = "base.en"
+VOICE_PATH = YOLO_DIR / "results" / "web_voice.webm"
+_whisper = None
+_whisper_lock = threading.Lock()
 
 # The models are loaded once and are not thread-safe; run one request at a time.
 _pipeline_lock = threading.Lock()
@@ -87,6 +99,26 @@ def _world_available() -> bool:
 
 def _detectors() -> Dict[str, bool]:
     return {"yolo11n": True, "world": _world_available(), "classroom": CLASSROOM_WEIGHTS.exists()}
+
+
+def _voice_available() -> bool:
+    return importlib.util.find_spec("whisper") is not None and shutil.which("ffmpeg") is not None
+
+
+def _load_whisper():
+    global _whisper
+    if _whisper is None:
+        import whisper
+        _whisper = whisper.load_model(WHISPER_MODEL)
+    return _whisper
+
+
+def _transcribe(audio: bytes) -> str:
+    with _whisper_lock:
+        model = _load_whisper()
+        VOICE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        VOICE_PATH.write_bytes(audio)
+        return model.transcribe(str(VOICE_PATH), fp16=False, language="en")["text"].strip()
 
 
 def _warm_up() -> None:
@@ -114,6 +146,13 @@ def _warm_up() -> None:
         print(f"[web] Warm-up failed (requests will load models lazily): {exc!r}", file=sys.stderr)
     finally:
         _ready.set()
+    if _voice_available():
+        try:
+            with _whisper_lock:
+                _load_whisper()
+            print(f"[web] Voice input ready (Whisper {WHISPER_MODEL}, offline)")
+        except Exception as exc:
+            print(f"[web] Whisper failed to load (mic falls back to the browser): {exc!r}", file=sys.stderr)
 
 
 def _probe_board_network() -> Dict[str, Any] | None:
@@ -410,7 +449,8 @@ class DashboardHandler(BaseHTTPRequestHandler):
             self._send_media(media)
             return
         if route == "/api/status":
-            self._send_json(HTTPStatus.OK, {"ready": _ready.is_set(), "detectors": _detectors()})
+            self._send_json(HTTPStatus.OK, {"ready": _ready.is_set(), "detectors": _detectors(),
+                                             "voice": _voice_available()})
             return
 
         rel = "index.html" if route in ("/", "") else route.lstrip("/")
@@ -428,8 +468,19 @@ class DashboardHandler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_POST(self) -> None:
+        if self.path == "/api/transcribe":
+            self._handle_transcribe()
+            return
         if self.path != "/api/detect":
             self.send_error(HTTPStatus.NOT_FOUND)
+            return
+
+        # Runs are only allowed while the PYNQ-Z2 is attached; re-probe in case it was just plugged in.
+        with _board_lock:
+            connected = _board_state["connected"]
+        if REQUIRE_BOARD and not connected and not _check_board()["connected"]:
+            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE,
+                            {"error": "PYNQ-Z2 board not connected. Connect the board to run the test."})
             return
 
         length = int(self.headers.get("Content-Length") or 0)
@@ -449,6 +500,23 @@ class DashboardHandler(BaseHTTPRequestHandler):
             return
 
         self._send_json(HTTPStatus.OK, result)
+
+
+    def _handle_transcribe(self) -> None:
+        length = int(self.headers.get("Content-Length") or 0)
+        if length <= 0 or length > MAX_BODY_BYTES:
+            self._send_json(HTTPStatus.REQUEST_ENTITY_TOO_LARGE, {"error": "Recording missing or too large."})
+            return
+        if not _voice_available():
+            self._send_json(HTTPStatus.SERVICE_UNAVAILABLE, {"error": "Offline voice needs openai-whisper and ffmpeg."})
+            return
+        try:
+            text = _transcribe(self.rfile.read(length))
+        except Exception as exc:
+            print(f"[web] transcription error: {exc!r}", file=sys.stderr)
+            self._send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": f"Could not transcribe: {exc}"})
+            return
+        self._send_json(HTTPStatus.OK, {"text": text})
 
 
 def main() -> None:

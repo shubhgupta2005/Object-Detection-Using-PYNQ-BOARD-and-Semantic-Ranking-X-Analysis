@@ -271,6 +271,76 @@
   .rank .sub { grid-column: 2 / 4; font: 11.5px var(--mono); color: var(--dim); }
   .empty-note { color: var(--dim); font-size: 14px; padding: 16px; margin: 0; }
 
+  /* Voice input */
+  .field .mic { padding: 6px; border: 0; background: none; color: var(--muted); display: inline-grid; place-items: center; border-radius: 8px; }
+  .field .mic:hover { color: var(--text); }
+  .field .mic.on { color: #ef4444; animation: blink 0.9s infinite; }
+
+  /* Robot action plan */
+  .plan { margin-top: 16px; }
+  .plan-body { padding: 16px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+  @media (max-width: 900px) { .plan-body { grid-template-columns: 1fr; } }
+  .plan-fig { margin: 0; display: grid; gap: 10px; }
+  .plan-map { display: block; width: 100%; height: auto; background: var(--bg); border: 1px solid var(--line); border-radius: 12px; }
+  .plan-map text { font: 9.5px var(--mono); fill: var(--muted); }
+  .plan-map .fov { fill: rgb(34 211 238 / 0.07); stroke: var(--line-2); }
+  .plan-map .reach { fill: rgb(163 230 53 / 0.13); }
+  .plan-map .reach-label { fill: var(--accent-2); }
+  .plan-map .ring { fill: none; stroke: var(--line-2); stroke-dasharray: 2 4; }
+  .plan-map .axis { stroke: var(--line-2); stroke-dasharray: 1 4; }
+  .plan-map .turn { fill: none; stroke: var(--accent); stroke-width: 1.6; }
+  .plan-map .arrowhead { fill: var(--accent); }
+  .plan-map .turn-label { fill: var(--accent); font-weight: 600; }
+  .plan-map .drive { stroke: var(--accent-2); stroke-width: 2.5; stroke-linecap: round; }
+  .plan-map .armpath { stroke: var(--accent-2); stroke-width: 2; stroke-dasharray: 2 4; stroke-linecap: round; }
+  .plan-map .target { fill: var(--accent-2); }
+  .plan-map .target.guide { fill: var(--bg); stroke: var(--accent-2); stroke-width: 2.5; }
+  .plan-map .halo {
+    fill: none; stroke: var(--accent-2); transform-box: fill-box; transform-origin: center;
+    animation: plan-halo 1.6s ease-out infinite;
+  }
+  @keyframes plan-halo { from { transform: scale(0.6); opacity: 0.8; } to { transform: scale(1.6); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .plan-map .halo { animation: none; opacity: 0.4; } }
+  .plan-map .pill { fill: var(--panel-2); stroke: var(--accent-2); }
+  .plan-map .pill-text { fill: var(--text); font-weight: 600; }
+  .plan-map .robot .body { fill: var(--accent); }
+  .plan-map .robot .wheel { fill: var(--muted); }
+  .plan-map .robot .cam { fill: var(--text); }
+  .plan-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 12px var(--mono); color: var(--muted); }
+  .plan-legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .plan-legend i { display: inline-block; box-sizing: border-box; }
+  .lg-drive { width: 18px; border-top: 3px solid var(--accent-2); }
+  .lg-arm { width: 18px; border-top: 2px dotted var(--accent-2); }
+  .lg-target { width: 11px; height: 11px; border-radius: 50%; background: var(--accent-2); }
+  .lg-guide { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--accent-2); }
+  .plan-steps { margin: 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: 9px; }
+  .plan-steps li {
+    counter-increment: step; display: grid; grid-template-columns: 22px 1fr; gap: 1px 10px; font-size: 14px; color: var(--muted);
+    transition: opacity 0.3s;
+  }
+  .plan-steps li.todo { opacity: 0.25; }
+  .plan-steps li strong { color: var(--text); font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: 0.5px; }
+  .plan-steps li span { grid-column: 2; }
+  .plan-steps li::before {
+    content: counter(step); grid-row: 1 / 3; display: inline-grid; place-items: center; width: 22px; height: 22px;
+    border-radius: 999px; font: 600 12px var(--mono); color: var(--on-accent); background: var(--accent);
+  }
+  .plan-steps li b { color: var(--text); }
+  .plan-steps li.idle { color: var(--dim); }
+  .plan-steps li.idle::before { display: none; }
+
+  /* Assistive use cases */
+  section.assist { padding: 56px 0 10px; }
+  section.assist h2.title { font-size: clamp(22px, 3vw, 32px); margin: 6px 0 8px; letter-spacing: -0.4px; }
+  .flow { margin-top: 20px; padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font: 13px var(--mono); color: var(--accent); }
+  .flow b { color: var(--text); font: 600 13px var(--sans); padding: 6px 10px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--bg); }
+  .cases { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .case { padding: 16px; display: grid; gap: 8px; align-content: start; }
+  .case h3 { margin: 0; font-size: 16px; }
+  .case p { margin: 0; color: var(--muted); font-size: 14px; }
+  .case .ex { font: 12.5px var(--mono); color: var(--muted); padding-top: 8px; border-top: 1px solid var(--line); }
+  .case .ex b { color: var(--accent-2); text-transform: capitalize; }
+
   /* Hardware section */
   section.hw { padding: 56px 0 10px; }
   section.hw h2.title { font-size: clamp(22px, 3vw, 32px); margin: 6px 0 8px; letter-spacing: -0.4px; }
@@ -492,6 +562,7 @@
     </div>
     <nav class="links" aria-label="Sections">
       <a href="#demo">Live demo</a>
+      <a href="#assist">Use cases</a>
       <a href="#hardware">System</a>
       <a href="#videos">Videos</a>
       <a href="#results">Results</a>
@@ -564,6 +635,9 @@
           <span aria-hidden="true">&gt;_</span>
           <span class="vh">Task prompt</span>
           <input id="task" autocomplete="off" placeholder="e.g. something to drink water from" maxlength="120" required>
+          <button type="button" class="mic" id="micBtn" aria-label="Speak your request" title="Speak your request">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+          </button>
         </label>
         <button class="primary" type="submit" id="goBtn">Identify object</button>
       </form>
@@ -583,6 +657,9 @@
           <label id="classroomLabel" title=""><input type="radio" name="detector" value="classroom">Fine-tuned · classroom</label>
         </div>
         <span class="spacer"></span>
+        <label class="chip" style="display:inline-flex;gap:6px;align-items:center" title="Read the result aloud">
+          <input type="checkbox" id="speakToggle" checked>Speak result
+        </label>
         <label class="chip" style="display:inline-flex;gap:6px;align-items:center">
           Upload image<input type="file" id="fileInput" accept="image/*" class="vh">
         </label>
@@ -595,7 +672,7 @@
       <div class="step" data-step="1"><div class="where pl">PL · FPGA fabric</div><strong>Object detection</strong><small>Tiny YOLOv2, INT8</small></div>
       <div class="step" data-step="2"><div class="where ps">PS · ARM Cortex-A9</div><strong>CLIP encoding</strong><small>Task + crops → 512-d</small></div>
       <div class="step" data-step="3"><div class="where ps">PS · ARM Cortex-A9</div><strong>Score fusion</strong><small>Image · label · confidence</small></div>
-      <div class="step" data-step="4"><div class="where io">Output</div><strong>Robot target</strong><small>Class + bbox as JSON</small></div>
+      <div class="step" data-step="4"><div class="where io">Output</div><strong>Robot action</strong><small>Target + fetch plan</small></div>
     </div>
 
     <div class="panel term">
@@ -623,11 +700,61 @@
       </div>
     </div>
 
+    <div class="panel plan">
+      <div class="panel-head"><h2>Robot action plan</h2><span class="meta">simulated arm · planned from the target's box</span></div>
+      <div class="plan-body">
+        <figure class="plan-fig">
+          <svg class="plan-map" id="planMap" viewBox="0 0 320 216" role="img" aria-label="Top-down view of the robot, its camera view and the target"></svg>
+          <figcaption class="plan-legend">
+            <span><i class="lg-drive"></i>drive</span>
+            <span><i class="lg-arm"></i>arm reach</span>
+            <span><i class="lg-target"></i>grasp target</span>
+            <span><i class="lg-guide"></i>too large: guide user</span>
+          </figcaption>
+        </figure>
+        <ol class="plan-steps" id="planSteps"><li class="idle">Identify an object to see how the robot would fetch it.</li></ol>
+      </div>
+    </div>
+
     <div class="panel history" id="historyPanel" hidden>
       <div class="history-head"><h2>Saved results</h2><span id="historyCount"></span><span>· saved in PJT1/saved_results · click one to reopen it</span></div>
       <div class="history-list" id="historyList"></div>
     </div>
   </main>
+
+  <section class="assist" id="assist">
+    <div class="eyebrow">Assistive robotics</div>
+    <h2 class="title">Who this helps</h2>
+    <p class="lede">
+      People who need help with everyday objects describe a <i>need</i>, not an object class. The robot turns that
+      request into the right object and a plan to fetch it, all on the robot itself, with no cloud.
+    </p>
+    <div class="panel flow" aria-label="From request to action">
+      <b>Speak a need</b>→<b>Detect objects · PYNQ-Z2 FPGA</b>→<b>Rank by meaning · CLIP</b>→<b>Plan the motion</b>→<b>Fetch &amp; tell the user</b>
+    </div>
+    <div class="cases">
+      <div class="panel case">
+        <h3>Wheelchair-mounted arm</h3>
+        <p>Users with limited arm movement (spinal cord injury, ALS) ask the arm to bring items from a table.</p>
+        <div class="ex">“something to drink from” → <b>cup</b></div>
+      </div>
+      <div class="panel case">
+        <h3>Elderly care at home</h3>
+        <p>A home robot fetches the phone, remote or glasses, so the user doesn't have to get up.</p>
+        <div class="ex">“I need to call someone” → <b>cell phone</b></div>
+      </div>
+      <div class="panel case">
+        <h3>Visual impairment</h3>
+        <p>The system finds the object and says where it is, so the user can reach it themselves.</p>
+        <div class="ex">“something to sit on” → <b>chair</b>, “to the right”</div>
+      </div>
+      <div class="panel case">
+        <h3>Hospital bedside</h3>
+        <p>Bed-bound patients ask for nearby items without calling a nurse for every small request.</p>
+        <div class="ex">“something to read” → <b>book</b></div>
+      </div>
+    </div>
+  </section>
 
   <section class="hw" id="hardware">
     <div class="eyebrow">Inside the system</div>
@@ -960,6 +1087,9 @@
         if (data.ready) setPill("serverDot", "serverText", "ok", "Pipeline ready");
         else { setPill("serverDot", "serverText", "busy", "Warming up models"); setTimeout(checkServer, 2000); }
       }
+      serverVoice = Boolean(data.voice);
+      micBtn.hidden = !serverVoice && !Recognition;
+      micBtn.title = serverVoice ? "Speak your request (offline speech recognition)" : "Speak your request (browser speech, needs internet)";
       const world = document.querySelector('input[value="world"]');
       world.disabled = !data.detectors.world;
       if (world.disabled && world.checked) document.querySelector('input[value="yolo11n"]').checked = true;
@@ -1020,6 +1150,10 @@
   async function identify(image) {
     const task = taskInput.value.trim();
     if (!task || busy) return;
+    if (boardRequired && boardConnected !== true) {
+      errorEl.textContent = "PYNQ-Z2 board not connected. Connect the board to run the test.";
+      return;
+    }
     busy = true;
     goBtn.disabled = true;
     goBtn.textContent = "Identifying…";
@@ -1041,6 +1175,7 @@
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || res.statusText);
       render(data, image);
+      speakResult(data, image);
       termResult(data);
       addHistory(data, image);
       finishSteps(true);
@@ -1050,8 +1185,7 @@
       finishSteps(false);
     } finally {
       busy = false;
-      goBtn.disabled = false;
-      goBtn.textContent = "Identify object";
+      updateGoBtn();
       $("resultView").classList.remove("busy");
       setPill("serverDot", "serverText", "ok", "Pipeline ready");
     }
@@ -1097,12 +1231,22 @@
     $("statConf").textContent = pct(sel?.confidence);
     $("statCount").textContent = String((data.detections || []).length);
 
+    const plan = planFor(sel, image);
+    renderPlan(plan, data);
     const out = sel ? {
       object: sel.class_name,
       confidence: +sel.confidence.toFixed(3),
       score: +sel.score.toFixed(3),
       bbox: sel.bbox.map((v) => Math.round(v)),
       task: data.task,
+      action: {
+        turn_deg: plan.turn,
+        distance_cm: plan.dist,
+        drive_cm: plan.drive,
+        grasp: plan.carry ? plan.grasp : "none (guide user)",
+        gripper_open_cm: plan.carry ? plan.open : null,
+        reach_px: [plan.u, plan.v],
+      },
     } : { object: null, task: data.task };
     $("jsonOut").innerHTML = escapeHtml(JSON.stringify(out, null, 2))
       .replace(/&quot;(\w+)&quot;:/g, '<span class="k">"$1"</span>:')
@@ -1121,6 +1265,230 @@
     $("rankEmpty").hidden = ranked.length > 0;
     if (!ranked.length) $("rankEmpty").textContent = "No objects detected in this frame.";
   }
+
+  // ── Robot action plan (simulated arm, derived from the target's bbox) ──
+  const CAMERA_HFOV = 60;     // degrees; typical USB webcam
+  const ARM_REACH_CM = 60;    // the arm reaches this far without driving
+  const GRIPPER_MAX_CM = 12;  // widest gripper opening; anything wider is not carried
+  // Typical real widths (cm). With the box width in pixels this gives distance (pinhole camera model).
+  const OBJECT_WIDTH_CM = {
+    cup: 8, mug: 9, "wine glass": 8, bottle: 7, "water bottle": 7, bowl: 15, spoon: 4, fork: 3, knife: 3,
+    "cell phone": 7, phone: 7, remote: 5, book: 15, laptop: 33, mouse: 6, keyboard: 44, scissors: 8, pen: 1.5,
+    pencil: 1, glasses: 14, headphones: 18, apple: 8, orange: 8, banana: 18, clock: 25, vase: 12, "teddy bear": 25,
+    backpack: 30, handbag: 30, umbrella: 10, "sports ball": 22, toothbrush: 2, "potted plant": 30, chair: 45,
+    bench: 120, couch: 180, bed: 150, "dining table": 120, table: 120, desk: 120, tv: 90, monitor: 55,
+    refrigerator: 70, person: 45,
+  };
+  // Flat objects are picked from above; upright / round ones are wrapped from the side.
+  const TOP_PINCH = new Set(["cell phone", "phone", "remote", "book", "pen", "pencil", "scissors", "spoon",
+    "fork", "knife", "toothbrush", "glasses", "mouse"]);
+  const distText = (cm) => (cm < 100 ? `${cm} cm` : `${(cm / 100).toFixed(1)} m`);
+  let planTimer = null;
+
+  function planFor(sel, image) {
+    if (!sel) return null;
+    const [x1, y1, x2, y2] = sel.bbox;
+    const name = sel.class_name, key = name.toLowerCase();
+    const u = Math.round((x1 + x2) / 2), v = Math.round((y1 + y2) / 2), bw = Math.max(1, Math.round(x2 - x1));
+    const turn = Math.round(((u - image.w / 2) / (image.w / 2)) * (CAMERA_HFOV / 2));
+    const width = OBJECT_WIDTH_CM[key];
+    const focal = (image.w / 2) / Math.tan((CAMERA_HFOV / 2) * Math.PI / 180);
+    // Unknown object: fall back to a rough guess from how much of the frame the box fills.
+    const area = (bw * (y2 - y1)) / (image.w * image.h);
+    const dist = width ? Math.round(Math.min(500, Math.max(15, (width * focal) / bw)))
+                       : area > 0.2 ? 40 : area > 0.06 ? 90 : 200;
+    return {
+      name, u, v, bw, turn, width, dist,
+      measured: Boolean(width),
+      range: dist <= ARM_REACH_CM ? "reach" : dist <= 120 ? "near" : "far",
+      carry: !width || width <= GRIPPER_MAX_CM,
+      grasp: TOP_PINCH.has(key) ? "top pinch" : "side wrap",
+      open: width ? Math.min(GRIPPER_MAX_CM, Math.round(width + 3)) : 10,
+      drive: Math.max(0, dist - 40),
+      side: Math.abs(turn) < 5 ? "straight ahead" : `to the ${turn < 0 ? "left" : "right"}`,
+      score: sel.score,
+    };
+  }
+
+  function renderPlan(p, data) {
+    clearInterval(planTimer);
+    drawPlanMap(p);
+    if (!p) {
+      $("planSteps").innerHTML = `<li class="idle">No suitable object found: the robot stays still and asks the user to rephrase.</li>`;
+      return;
+    }
+    const name = escapeHtml(p.name), n = (data.detections || []).length;
+    const where = p.side[0].toUpperCase() + p.side.slice(1);
+    const steps = [
+      ["Perceive", `Saw ${n} object${n === 1 ? "" : "s"}; the <b>${name}</b> best fits “${escapeHtml(data.task)}” (match ${pct(p.score)}).`],
+      ["Localise", `${where}, about <b>${distText(p.dist)}</b> away ` + (p.measured
+        ? `(a ${name} is ~${p.width} cm wide and spans ${p.bw} px in the image).`
+        : `(rough guess from the box size: no typical size known for a ${name}).`)],
+      ["Turn", Math.abs(p.turn) < 5 ? `Already facing it: <b>no base rotation</b>.`
+        : `Rotate the base <b>${Math.abs(p.turn)}° ${p.turn < 0 ? "left" : "right"}</b> so the ${name} is centred in the camera.`],
+      ["Move", p.range === "reach" ? `Within arm’s reach (≤ ${ARM_REACH_CM} cm): <b>no driving needed</b>.`
+        : `Drive forward <b>${distText(p.drive)}</b>, then detect again to correct the position.`],
+      ["Grasp", p.carry
+        ? `${p.grasp[0].toUpperCase() + p.grasp.slice(1)} grasp: open the gripper to <b>${p.open} cm</b>, reach to image point (${p.u}, ${p.v}), close until contact, lift 10 cm.`
+        : `Too large to carry (~${p.width} cm wide, gripper opens ${GRIPPER_MAX_CM} cm): <b>no grasp</b>, stop beside it instead.`],
+      ["Deliver", p.carry ? `Bring the ${name} to the user’s hand and say <b>“Here is your ${name}.”</b>`
+        : `Guide the user by voice: <b>“The ${name} is ${distText(p.dist)} ${p.side}.”</b>`],
+      ["Safety", `Throughout: stop if a person or obstacle enters the path; if the match is weak, first ask “Did you mean the ${name}?”`],
+    ];
+    const list = $("planSteps");
+    list.innerHTML = steps.map(([phase, detail]) => `<li class="todo"><strong>${phase}</strong><span>${detail}</span></li>`).join("");
+    // Play the plan step by step, like the robot working through it.
+    const items = [...list.children];
+    let i = 0;
+    const next = () => { if (i < items.length) items[i++].classList.remove("todo"); else clearInterval(planTimer); };
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) items.forEach((li) => li.classList.remove("todo"));
+    else { next(); planTimer = setInterval(next, 450); }
+  }
+
+  // Top-down map: robot at the bottom, camera field of view as a fan, distance rings for scale.
+  function drawPlanMap(p) {
+    const cx = 160, cy = 196, R = 172, BODY = 18, MAX_CM = 250;
+    const half = (CAMERA_HFOV / 2) * Math.PI / 180;
+    const radius = (cm) => Math.min(R, BODY + (cm / MAX_CM) * (R - BODY));
+    const xy = (a, r) => [cx + r * Math.sin(a), cy - r * Math.cos(a)];
+    const pt = (a, r) => xy(a, r).map((n) => n.toFixed(1)).join(" ");
+    const arc = (r, a0, a1) => `M${pt(a0, r)} A${r} ${r} 0 0 ${a1 > a0 ? 1 : 0} ${pt(a1, r)}`;
+    const reach = radius(ARM_REACH_CM);
+
+    let svg = `
+      <path class="fov" d="M${cx} ${cy} L${pt(-half, R)} A${R} ${R} 0 0 1 ${pt(half, R)} Z"/>
+      <path class="reach" d="M${cx} ${cy} L${pt(-half, reach)} A${reach} ${reach} 0 0 1 ${pt(half, reach)} Z"/>
+      <line class="axis" x1="${cx}" y1="${cy - BODY}" x2="${cx}" y2="${cy - R}"/>
+      <text x="10" y="16">camera view · ${CAMERA_HFOV}°</text>`;
+    // Distance rings with labels just outside the right edge of the fan.
+    for (const cm of [50, 100, 150, 200]) {
+      const r = radius(cm), [lx, ly] = xy(half, r);
+      svg += `<path class="ring" d="${arc(r, -half, half)}"/>
+        <text x="${(lx + 4).toFixed(1)}" y="${(ly + 3).toFixed(1)}">${distText(cm)}</text>`;
+    }
+    const [rx, ry] = xy(-half, reach);
+    svg += `<text class="reach-label" x="${(rx - 4).toFixed(1)}" y="${(ry + 3).toFixed(1)}" text-anchor="end">arm reach</text>`;
+
+    if (p) {
+      const a = p.turn * Math.PI / 180, tr = radius(p.dist);
+      const [tx, ty] = xy(a, tr);
+      // Turn arrow from straight ahead to the target's bearing.
+      if (Math.abs(p.turn) >= 5) {
+        const left = p.turn < 0;
+        svg += `<path class="turn" d="${arc(30, 0, a)}" marker-end="url(#planArrow)"/>
+          <text class="turn-label" x="${cx + (left ? -28 : 28)}" y="${cy + 4}" text-anchor="${left ? "end" : "start"}">turn ${Math.abs(p.turn)}° ${left ? "left" : "right"}</text>`;
+      }
+      // Path: solid while driving, dotted for the final arm reach.
+      const driveR = p.drive > 0 ? Math.min(tr - 10, radius(p.drive)) : BODY;
+      if (driveR > BODY) svg += `<path class="drive" d="M${pt(a, BODY)} L${pt(a, driveR)}"/>`;
+      svg += `<path class="armpath" d="M${pt(a, driveR)} L${pt(a, tr - 8)}"/>`;
+      // Target: filled = will be grasped, hollow = too large, guide the user instead.
+      svg += `<circle class="halo" cx="${tx.toFixed(1)}" cy="${ty.toFixed(1)}" r="11"/>
+        <circle class="target${p.carry ? "" : " guide"}" cx="${tx.toFixed(1)}" cy="${ty.toFixed(1)}" r="6"/>`;
+      const label = `${p.name} · ${distText(p.dist)}${p.dist > MAX_CM ? "+" : ""}`;
+      const w = label.length * 6.2 + 12;
+      const lx = Math.min(320 - w / 2 - 4, Math.max(w / 2 + 4, tx)), ly = Math.max(14, ty - 20);
+      svg += `<rect class="pill" x="${(lx - w / 2).toFixed(1)}" y="${(ly - 11).toFixed(1)}" width="${w.toFixed(1)}" height="16" rx="8"/>
+        <text class="pill-text" x="${lx.toFixed(1)}" y="${(ly + 1).toFixed(1)}" text-anchor="middle">${escapeHtml(label)}</text>`;
+    }
+
+    // Robot seen from above: body, two wheels, camera at the front.
+    svg += `<g class="robot">
+        <rect class="wheel" x="${cx - 21}" y="${cy - 6}" width="6" height="16" rx="2"/>
+        <rect class="wheel" x="${cx + 15}" y="${cy - 6}" width="6" height="16" rx="2"/>
+        <rect class="body" x="${cx - 15}" y="${cy - 10}" width="30" height="24" rx="6"/>
+        <rect class="cam" x="${cx - 5}" y="${cy - 14}" width="10" height="6" rx="2"/>
+      </g>
+      <defs><marker id="planArrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M0 0 L8 4 L0 8 Z" class="arrowhead"/></marker></defs>`;
+    $("planMap").innerHTML = svg;
+  }
+  drawPlanMap(null);
+
+  // ── Voice output (browser speech synthesis) ───────────────────
+  function speakResult(data, image) {
+    if (!("speechSynthesis" in window) || !$("speakToggle").checked) return;
+    const p = planFor(data.selected, image);
+    const far = (cm) => (cm < 100 ? `${cm} centimetres` : `${(cm / 100).toFixed(1)} metres`);
+    const text = !p ? "Sorry, I could not find anything that fits that request."
+      : `I found the ${p.name}, ${p.side}, about ${far(p.dist)} away. ` +
+        (p.carry ? "I will bring it to you." : "It is too big to carry, so I will guide you to it.");
+    speechSynthesis.cancel();
+    speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+  }
+
+  // ── Voice input ───────────────────────────────────────────────
+  // Preferred: record here, transcribe on the server with Whisper (offline; enabled by checkServer()).
+  // Fallback: the browser's own speech recognition (Chrome / Edge, needs internet).
+  const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const micBtn = $("micBtn"), TASK_PLACEHOLDER = taskInput.placeholder;
+  let serverVoice = false, listening = false, recorder = null, recordTimer = null, rec = null;
+  micBtn.hidden = !Recognition;
+
+  function setListening(on) {
+    listening = on;
+    micBtn.classList.toggle("on", on);
+    micBtn.setAttribute("aria-label", on ? "Stop listening" : "Speak your request");
+    taskInput.placeholder = on ? "Listening… press the mic again when you’re done" : TASK_PLACEHOLDER;
+  }
+  function useTranscript(text) {
+    taskInput.value = text.replace(/[.!?]+$/, "").trim();
+    // Spoken request + live camera: run straight away, hands-free.
+    if (taskInput.value && stream && video.videoWidth) form.requestSubmit();
+  }
+
+  async function recordOffline() {
+    let mic;
+    try { mic = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch { errorEl.textContent = "Allow microphone access to speak your request."; return; }
+    const chunks = [];
+    recorder = new MediaRecorder(mic);
+    recorder.ondataavailable = (e) => chunks.push(e.data);
+    recorder.onstop = async () => {
+      clearTimeout(recordTimer);
+      mic.getTracks().forEach((t) => t.stop());
+      setListening(false);
+      micBtn.disabled = true;
+      taskInput.placeholder = "Transcribing…";
+      try {
+        const res = await fetch("/api/transcribe", { method: "POST", body: new Blob(chunks, { type: recorder.mimeType }) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || res.statusText);
+        if (data.text) useTranscript(data.text);
+        else errorEl.textContent = "Didn’t catch that. Press the mic and try again.";
+      } catch (err) {
+        errorEl.textContent = `Voice input failed: ${err.message}`;
+      } finally {
+        micBtn.disabled = false;
+        taskInput.placeholder = TASK_PLACEHOLDER;
+      }
+    };
+    recorder.start();
+    setListening(true);
+    recordTimer = setTimeout(() => recorder.state === "recording" && recorder.stop(), 7000);
+  }
+
+  if (Recognition) {
+    rec = new Recognition();
+    rec.lang = "en-IN";
+    rec.onresult = (e) => useTranscript(e.results[0][0].transcript);
+    rec.onerror = (e) => {
+      errorEl.textContent = e.error === "not-allowed" ? "Allow microphone access to speak your request."
+        : e.error === "network" ? "Voice input needs an internet connection (the browser’s speech service)."
+        : e.error === "no-speech" ? "Didn’t hear anything. Press the mic and try again." : `Voice input failed (${e.error}).`;
+    };
+    rec.onend = () => setListening(false);
+  }
+
+  micBtn.addEventListener("click", () => {
+    if (listening) {
+      if (recorder?.state === "recording") recorder.stop(); else rec?.stop();
+      return;
+    }
+    errorEl.textContent = "";
+    if (serverVoice) recordOffline();
+    else if (rec) { try { rec.start(); setListening(true); } catch { /* already started */ } }
+  });
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -1154,7 +1522,7 @@
   themeLabel();
 
   // ── PYNQ-Z2 board status (real check done by the server) ──────
-  let boardConnected = null, toastTimer = null;
+  let boardConnected = null, boardRequired = true, toastTimer = null;
   function toast(html, ok) {
     document.querySelector(".toast")?.remove();
     const t = document.createElement("div");
@@ -1165,6 +1533,16 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.remove(), 5000);
   }
+  // Tests may only run while the board is attached.
+  function updateGoBtn() {
+    if (busy) return;
+    const on = boardConnected === true || !boardRequired;
+    goBtn.disabled = !on;
+    goBtn.textContent = on ? "Identify object" : "Connect PYNQ-Z2 board";
+    goBtn.title = on ? "" : "Connect the PYNQ-Z2 board (Ethernet or micro-USB) to run the test";
+  }
+  updateGoBtn();
+
   function boardSummary(s) {
     if (s.network) return `${s.network.host}`;
     if (s.usb?.length) return `USB ${s.usb.map((u) => u.port).join(", ")}`;
@@ -1190,6 +1568,8 @@
       if (on) say(`${tag("BOARD ", "t-ok")} <span class="t-ok">PYNQ-Z2 connected</span> · ${escapeHtml(boardSummary(s))}`);
     }
     boardConnected = s.checked_at ? on : boardConnected;
+    boardRequired = s.required !== false;
+    updateGoBtn();
   }
   async function pollBoard(force = false) {
     try {
